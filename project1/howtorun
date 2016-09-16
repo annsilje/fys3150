@@ -1,0 +1,5 @@
+mkdir fig output
+cd src
+make
+./project1 10 100 1000 10000 100000 1000000 10000000
+python3 make_plots_and_tables.py
