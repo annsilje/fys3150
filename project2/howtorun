@@ -1,0 +1,11 @@
+#Comments!
+# Decrease n for faster execution, increase n for 
+# higher precision.
+mkdir fig output
+cd src
+make
+#To run with tests
+./project2 400 something
+#To run without tests
+./project2 400
+python3 make_plots.py

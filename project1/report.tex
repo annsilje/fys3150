@@ -271,7 +271,7 @@ The generic and tridiagonal solver only uses arrays and the memory consumption t
 
 \section{Conclusions}
 \label{sec:conclusions}
-The execution time of the LU-decomposition method is obviously a lot longer than the execution time of the tridiagonal solvers. When the matrix $\bm{A}$ is sparse a lot of the floating point operations in LU-decomposition is multiplication by zero, and the execution time can be reduced significantly by exploiting this knowledg,e as is done with the tridiagonal solvers. 
+The execution time of the LU-decomposition method is obviously a lot longer than the execution time of the tridiagonal solvers. When the matrix $\bm{A}$ is sparse a lot of the floating point operations in LU-decomposition is multiplication by zero, and the execution time can be reduced significantly by exploiting this knowledge as is done with the tridiagonal solvers. 
 
 The approximation to the second order derivative is reasonable for smaller values of $h$, for instance with $n=10^4$. But the relative error becomes large near the boundary conditions because the analytical solution is approaching zero.  
 

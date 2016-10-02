@@ -1,5 +1,7 @@
 #include <armadillo>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <cmath>
 #include <ctime>
 #include <iomanip>
@@ -9,77 +11,14 @@ using namespace arma;
 
 //globals
 const double zero = 1.0e-10;
+enum potential {ONE, TWO_NO_INTERACTION, TWO_INTERACTION};
 
-double find_max_off_diag(mat& A, int& k, int& l, int n, double prev_max){
-    double max_value = prev_max;
-    double start_max = max_value;
-    int start_k = k;
-    int start_l = l;
-    //search column k
-    for(int i = 0; i < start_k; i++){
-        double a_ik = fabs(A(i,start_k));
-        if(a_ik > max_value){
-            max_value = a_ik;
-            k = i;
-            l = start_l;
-        }
-    }
-    //search column l
-    for(int i = 0; i < start_l; i++){
-        double a_il = fabs(A(i,start_l));
-        if(a_il > max_value){
-            max_value = a_il;
-            k = i;
-            l = start_l;
-        }
-    }
-    //search row k 
-    for(int j = start_k + 1; j < n; j++){
-        double a_kj = fabs(A(start_k,j));
-        if(a_kj > max_value){
-            max_value = a_kj;
-            l = j;
-            k = start_k;
-        }
-    }
-    //search row l
-    for(int j = start_l + 1; j < n; j++){
-        double a_lj = fabs(A(start_l,j));
-        if(a_lj > max_value){
-            max_value = a_lj;
-            l = j;
-            k = start_k;
-        }
-    }
-    if(max_value > start_max){
-        return max_value;
-    }
-    max_value = 0;
-    //brute force search the rest
-    for(int i = 0; i < n; i++){
-        if(!(i == k || i == l)){
-            //cout << "i=" << i << endl;
-            for(int j = i+1; j < n; j++){
-                if (!(j == k || j == l)){
-                    double a_ij = fabs(A(i,j));
-                    //cout << "A(" << i << "," << j << ")=" << a_ij << ", max_value= " << max_value << endl;
-                    if (a_ij > max_value){
-                        max_value = a_ij;
-                        k = i;
-                        l = j;
-                    }
-                }else{
-                    //cout << "Skipping column j=" << j << ", k=" << k << ", l=" << l << endl;
-                }
-            }
-        }else{
-           //cout << "Skipping row i=" << i << ", k=" << k << ", l=" << l << endl;
-        }
-    }
-    return max_value;
-}
-
-double stupid_max(mat& A, int& k, int& l, int n){
+/* Searches the upper triangular part of matrix A of dimensions nxn for
+*  the larges absolute value.
+*
+*  Returns the largest absolute value and the indices k and l of this element are set
+*/
+double max_off_diagonal(mat& A, int& k, int& l, int n){
     double max_value = 0;
     
     for(int i = 0; i < n; i++){
@@ -95,7 +34,8 @@ double stupid_max(mat& A, int& k, int& l, int n){
     return max_value;
 }
 
-
+/*
+*/
 void jacobi_transform(mat& A, mat& R, int k, int l, int n){
     //determine sin_x and cos_x
     double sin_x, cos_x;
@@ -137,24 +77,94 @@ void jacobi_transform(mat& A, mat& R, int k, int l, int n){
         R(i,l) = cos_x*r_il + sin_x*r_ik;
     }
     return;
-} //end jacobi_transform
+}
 
 
 int jacobi(mat& A, mat& R, int n, int max_iter){
     int iterations = 0;
-    int k = 0;
-    int l = 1;
-    double max_off_diag = fabs(A(k,l));
+    int k, l;
+    double max_off_diag = max_off_diagonal(A, k, l, n);
 
     while(max_off_diag > zero && iterations < max_iter ){
         jacobi_transform(A, R, k, l, n);
-  //      max_off_diag = find_max_off_diag(A, k, l, n, max_off_diag);       
-        max_off_diag = stupid_max(A, k, l, n);
+        max_off_diag = max_off_diagonal(A, k, l, n);
         iterations++;
     }
     
     return iterations;
 }
+
+
+void setup_matrix(mat& A, double h, int n, potential potential, double omega_r=1.0){
+    
+    A.fill(0.0);
+    //Setup constant elements
+    double e = -1.0 / pow(h,2);
+    double d_const = 2 / pow(h,2);
+    double* rho = new double[n];
+    
+    for(int i = 0; i < n; i++){
+        if(i > 0) A(i,i-1) = e;
+        if(i < n-1) A(i,i+1) = e;
+        A(i,i) = d_const;
+        rho[i] = (i+1)*h;
+    }
+    //Add potential function
+    switch (potential){
+        case ONE: {
+            for(int i = 0; i < n; i++) A(i,i) += pow(rho[i],2);
+            break;
+        }
+        case TWO_NO_INTERACTION: {
+            for(int i = 0; i < n; i++){
+                A(i,i) += pow(omega_r, 2)*pow(rho[i], 2);
+            }
+            break;
+        }
+
+        case TWO_INTERACTION: {
+            for(int i = 0; i < n; i++){
+                A(i,i) += pow(omega_r, 2)*pow(rho[i], 2) + 1/rho[i];
+            }
+            break;
+        }
+    }
+    delete []rho;
+}
+
+
+
+string create_filename(potential potential, double omega_r=1.0){
+    if(potential == ONE){
+        return "../output/One_particle.txt";
+    }
+    stringstream ss;
+    if(potential == TWO_NO_INTERACTION){
+        ss << setiosflags(ios::showpoint|ios::fixed) << setprecision(2); 
+        ss << "../output/Two_particles_no_interaction_frequency_" << setfill('0') << setw(4)  << omega_r << ".txt";
+    }
+    if(potential == TWO_INTERACTION){
+        ss << setiosflags(ios::showpoint|ios::fixed) << setprecision(2); 
+        ss << "../output/Two_particles_with_interaction_frequency_" << setfill('0') << setw(4)  << omega_r << ".txt";
+    }
+
+    return ss.str(); 
+
+}
+
+double get_rho_max(potential potential, double omega_r){
+    //Decent values for rho_max is found by trial and error
+    //These values give reasonable results for n=>400 for all cases
+    if(potential == ONE) return 10;
+    if(fabs(omega_r - 0.01) < zero) return 50;
+    if(fabs(omega_r - 0.10) < zero) return 20;
+    if(fabs(omega_r - 0.50) < zero) return 15;
+    if(fabs(omega_r - 1.00) < zero) return 10;
+    if(fabs(omega_r - 5.00) < zero) return 5;
+    cout << "Warning: Using untested omega_r. Results may be bad" << endl;
+    return 10; 
+}
+
 
 
 bool test_orthogonality(mat& R, int n){
@@ -164,6 +174,7 @@ bool test_orthogonality(mat& R, int n){
             vec w_i = R.col(i);
             vec w_j = R.col(j);
             double dot_product = dot(w_i, w_j);
+            //cout << "Dot product: " << dot_product << " i=" << i << " j=" << j << endl;
             if(i != j && fabs(dot_product) > zero) return false;
             if(i == j && fabs(dot_product - 1) > zero) return false;
         }
@@ -172,48 +183,130 @@ bool test_orthogonality(mat& R, int n){
 }
 
 
+bool test_max_off_diagonal(){
+    //Set up test case
+    int n = 5;
+    mat A(n,n);
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            A(i,j) = i + j;
+            A(j,i) = A(i,j);
+        }
+        A(i,i) = 1; 
+    }
+    //Perform unit test
+    int k, l;
+    double max_value = max_off_diagonal(A, k, l, n);
+    if (max_value == 2*n-3 && k == n-2 && l == n-1) return true;
+    
+    return false; 
+}
+
+
+int test_eigenvalues(vec& diag1, vec& diag2, int n){
+    int counter = 0;
+    for(int i=0; i < n; i++){
+        if(fabs(diag1(i) - diag2(i)) < zero) counter++;
+    }
+    return counter;
+}
+
+
+void solve_problem(ofstream& fs_clock, int n, potential potential, bool do_tests, double omega_r=1.0){
+    if(potential==ONE) cout << "Solving for one particle" << endl;
+    if(potential==TWO_NO_INTERACTION) cout << "Solving for two particles without " 
+                                           << "interaction, frequency=" << omega_r << endl;
+    if(potential==TWO_INTERACTION) cout << "Solving for two particles with "
+                                           << "interaction, frequency=" << omega_r << endl;
+    
+    //Init system                                   
+    double rho_max = get_rho_max(potential, omega_r);
+    double h = rho_max/(1+n);
+    int max_iter = n*1000;
+    mat A(n,n); 
+    mat U(n,n, fill::eye); //Eigenvectors
+    setup_matrix(A, h, n, potential, omega_r);
+    
+    //Solve system
+    double start = clock();
+    int iter = jacobi(A, U, n, max_iter);
+    fs_clock << iter << " " << omega_r << " " << potential << " " << h << " " << rho_max << " "
+             << (clock() - start)/(double) CLOCKS_PER_SEC << " ";
+    
+    //Output results
+    vec diag = diagvec(A);
+    uvec idx = sort_index(diag);
+    diag = diag(idx);
+    cout << setiosflags(ios::showpoint | ios::fixed) << setprecision(4);
+    cout << "First three eigenvalues from Jacobi: " << diag(0) << " " << diag(1) << " " << diag(2) << endl;
+
+    //Save results 
+    ofstream fs;
+    string filename = create_filename(potential, omega_r);
+    fs.open(filename.c_str());
+    fs << rho_max << " " << n << endl;
+    fs << setiosflags(ios::showpoint) << setprecision(16);   
+    for(int i = 0; i < n; i++){
+        fs << U(i, idx(0)) << " " << U(i, idx(1)) << " " << U(i, idx(2)) << endl; 
+    }
+    fs.close();
+
+    //Perform some tests
+    if(do_tests){
+        setup_matrix(A, h, n, potential, omega_r);
+        //Find three lowest eigenvalues using arma::eig_sym
+        double start = clock();
+        vec diag2 = eig_sym(A); 
+        fs_clock << " " << (clock() - start)/(double) CLOCKS_PER_SEC;
+        cout << "First three eigenvalues from arma::eig_sym: " << diag2(0) << " " << diag2(1) << " " << diag2(2) << endl; 
+        cout << "Is orthogonality of eigenvectors preserved?: " << test_orthogonality(U, n) << endl; 
+        cout << "Unit test result of max_off_diagonal: " << test_max_off_diagonal() << endl;
+        cout << "How many eigenvalues are equal for the two methods?: " << test_eigenvalues(diag, diag2, n) << endl;
+    }
+    fs_clock << endl;
+    cout << endl;
+    
+
+}
+
+void print_help(){
+        cout << "Usage: project2 <n> [test]\n";
+        cout << "\t<n> - number of steps for algorithm, recommended n=400\n";
+        cout << "\t[test] - add an arbitrary argument to run tests during execution\n";
+        cout << "Example: project2 400 something\n";
+}
+
+
+
 int main(int argc, char** argv){
     if(argc < 2){
-        cout << "Missing input argument: n\n";
-        cout << "Usage: " << argv[0] << " <n> [rho_max]\n";
-        cout << "\t<n> - number of steps for algorithm\n";
-        cout << "\t[rho_max] - upper boundary of rho, where u(rho_max) = 0";
-        cout << "Example: " << argv[0] << " 10\n";
+        cout << "Missing input arguments \n";
+        print_help();
         return 1;
     }
-    
-    
+        
     int n = atoi(argv[1]);
-    int max_iter = 1000*n;
-    double rho_max = (argc == 3) ? atof(argv[2]) : 8.0;
-    double h = rho_max/(n+1);
-    
-    mat A(n,n, fill::zeros); 
-    mat R(n,n, fill::eye);
-    
-    //Setup A
-    double e = -1.0/pow(h,2);
-    double d_const = 2/pow(h,2);
-    for(int i = 0; i < n; i++){
-        if(i>0) A(i, i-1) = e;
-        if(i<n-1) A(i, i+1) = e;
-        A(i,i) = d_const + pow(i*h,2);
-    }
-    //Copy A
-    mat A_copy(A);
-    double start = clock();
-    int iter = jacobi(A, R, n, max_iter);
-    cout << "Runtime Jacobi:" << (clock() - start)/(double) CLOCKS_PER_SEC << "seconds"<< endl;
-    vec diag = sort(diagvec(A));
-    cout << "finished after " << iter << " iterations (max=" << max_iter << ")" <<endl;
-    cout << "diag_123: " << diag(0) << " " << diag(1) << " " << diag(2) << endl;
-    bool ortho_test = test_orthogonality(R, n);
-    cout << "Ortho test result: " << ortho_test << endl; 
+    bool do_tests = (argc > 2) ? true : false;
+    ofstream fs_clock;
+    fs_clock.open("../output/exec_time.txt");
+    fs_clock << setiosflags(ios::showpoint | ios::fixed) << setprecision(6);   
 
-    start = clock();
-    vec diag2 = eig_sym(A_copy);
-    cout << "Runtime arma::eig_sym:" << (clock() - start)/(double) CLOCKS_PER_SEC << "seconds"<< endl;
-    cout << "diag_123: " << diag2(0) << " " << diag2(1) << " " << diag2(2) << endl; 
+    solve_problem(fs_clock, n, ONE, do_tests);
+
+    solve_problem(fs_clock, n, TWO_NO_INTERACTION, do_tests, 0.01);
+    solve_problem(fs_clock, n, TWO_NO_INTERACTION, do_tests, 0.1);
+    solve_problem(fs_clock, n, TWO_NO_INTERACTION, do_tests, 0.5);
+    solve_problem(fs_clock, n, TWO_NO_INTERACTION, do_tests, 1.0);
+    solve_problem(fs_clock, n, TWO_NO_INTERACTION, do_tests, 5.0);
+
+    solve_problem(fs_clock, n, TWO_INTERACTION, do_tests, 0.01);
+    solve_problem(fs_clock, n, TWO_INTERACTION, do_tests, 0.1);
+    solve_problem(fs_clock, n, TWO_INTERACTION, do_tests, 0.5);
+    solve_problem(fs_clock, n, TWO_INTERACTION, do_tests, 1.0);
+    solve_problem(fs_clock, n, TWO_INTERACTION, do_tests, 5.0);
+
+    fs_clock.close();    
+    return 0;
 }
 
 
