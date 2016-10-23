@@ -73,6 +73,14 @@ void Examples::twoBodyEscape(double dt, int steps){
     twoBodySystem3->setFileWriting       (true);
     //twoBodySystem3->removeLinearMomentum ();
     twoBodySystem3->integrate            (steps);
+
+    System* twoBodySystem4 = new System("../output/Two_Bodies_Escape4.txt");
+    twoBodySystem4->setIntegrator        (new VelocityVerlet(twoBodySystem4, dt, true));
+    twoBodySystem4->setPotential         (new NewtonianGravity(G));
+    twoBodySystem4->setInitialCondition  (new TwoBody("../input/init_sun_earth_bound4.txt"));
+    twoBodySystem4->setFileWriting       (true);
+    //twoBodySystem4->removeLinearMomentum ();
+    twoBodySystem4->integrate            (steps);
 }
 
 void Examples::newtonianMercury(double dt, int steps){

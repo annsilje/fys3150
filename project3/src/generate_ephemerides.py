@@ -22,7 +22,7 @@ M['Neptune'] = 1.03e26
 
 
 def setup_parser():
-    parser = argparse.ArgumentParser(description='Generate planet positions and velocities')
+    parser = argparse.ArgumentParser(description='Generate planet positions and velocities file from ephemerides de430.bsp')
     parser.add_argument('year', metavar='yyyy', type=int, help='4 digit year for ephemerides')
     parser.add_argument('month', metavar='m', type=int, help='month[1-12] for ephemerides')
     parser.add_argument('day', metavar='d', type=int, help='day[1 - 31] for ephemerides')

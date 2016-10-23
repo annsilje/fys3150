@@ -47,7 +47,7 @@ def plot_perihelion_precession(min_x, min_y):
     arcsecs = radians*(360*3600/(2*np.pi))
 
     plt.plot(arcsecs)
-    plt.ylabel(r'Perihelion precession $\theta_p$')
+    plt.ylabel(r'Perihelion precession $\theta_p$ (arc seconds)')
     plt.xlabel('Revolution')
     #plt.title('Angular change in position of Mercury\'s perihelion')
     plt.savefig('../fig/Perihelion_Precession.pdf')
@@ -58,7 +58,7 @@ def plot_perihelion_precession(min_x, min_y):
     print("Difference: %4.2f arcseconds" %(arcsecs[-1] - arcsecs[0]))
 
 def setup_parser():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description='Find the perihelion coordinates for each revolution and save them to file. Plots the angle.')
     parser.add_argument('--read', action="store_true", help='Reads the original (x,y,z) values and creates a new file with only the perihelion coordinates')
     return parser;
 

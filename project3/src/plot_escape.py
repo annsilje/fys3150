@@ -5,7 +5,7 @@ import glob
 
 def main():
     files = sorted(glob.glob('../output/Two_Bodies_Escape*.txt'))
-    legends = [r'Sun', r'$v_{E}=\sqrt{8\pi^2}$', r'$v_{E}=8$', r'$v_{E}=8.8$', r'$v_{E}=8.88$']
+    legends = [r'Sun', r'$v_{E}=\sqrt{8\pi^2}$', r'$v_{E}=8$', r'$v_{E}=8.5$', r'$v_{E}=8.8$', r'$v_{E}=8.88$']
     plt.plot([0],[0],'o')
     for filename in files:
         data = np.genfromtxt(filename, unpack=True, skip_header=1)

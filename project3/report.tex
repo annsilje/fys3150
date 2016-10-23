@@ -21,7 +21,7 @@
 \newpage
 
 \begin{abstract}
-This project models the orbits of the planets and the Sun in the solar system by numerically solving coupled ordinary differential equations describing the motion of the celestial bodies based on the gravitational force.
+This project models the orbits of the planets and the Sun in the solar system by numerically solving coupled ordinary differential equations describing the motion of the celestial bodies based on the gravitational force. For the Earth-Sun system the numerical algorithms Forward Euler and Velocity Verlet has been tested. The Velocity Verlet algorithm turned out to perform significantly better than the Forward Euler algorithm. The tree-body problem of the Earth-Jupiter-Sun system has been simulated with different masses for the planet Jupiter, and the 9-body problem of the solar system has been solved. The Sun is the by far most important contributor to the planets orbits, but the planets also have an effect on the motion of the Sun, which again affects the motion of the planets.. Finally, a modified Newtonian gravitational force with a correction to account for the effects of general relativity is tested to investigate the impact on Mercury's orbit. The discrepancy between the expected precession of Mercury's orbit from the classical newtonian gravitational force of the other celestial bodies in the solar system and the observed value can be reproduced with the modified Newtonian gravitational force.
 \end{abstract}
 
 \vspace{1cm}
@@ -51,7 +51,7 @@ where each equation can be rewritten into a set of first order differential equa
 
 For a two-body problem in three dimensions this leads to 12 coupled first order differential equations. For the three-body problem in three dimensions the number of equations increases to 18. In general, there are 6 coupled first order differential equations for each body. For the 9-body problem of the solar system this becomes 54 equations. Each equation also has an initial condition for the time $t_0=0$, yielding the initial position and velocity of each body. Since the Sun is large compared to the other celestial bodies, it can be reasonable in some cases to ignore the forces the planets exert on the Sun and keep the Sun's position fixed. This will reduce the number of equations by 6 for each case.
 
-Choosing a step size, $h$, and discretizing the problem with $t_{i+1} = t_i + ih$, for $i=0,1,...,n$, these differential equations can be solved numerically using numerous different methods. Here, only two of these methods will be tested, namely the Forward Euler and Velocity Verlet algorithms.
+Choosing a step size, $h$, and discretizing the problem with $t_{i+1} = t_i + ih$, for $i=0,1,...,n$, these differential equations can be solved numerically using numerous different methods. Here, only two of these methods will be tested, namely the Forward Euler and Velocity Verlet algorithms, which is also described in \cite{lectures}.
 
 \subsection{Forward Euler}
 \label{sec:euler}
@@ -245,7 +245,7 @@ $10^8$ && $399.5480$s && $426.0720$s \\
 \end{tabularx}
 \end{table}
 
-With a fixed Sun at the origin the theoretical escape velocity, or more correctly escape speed, of the Earth was in equation \ref{eq:esc} shown to be (skipping units) $v=\sqrt{8}\pi\approx8.8857658763$. Figure \ref{fig:esc} shows the simulations of the 2-body problem with the Sun fixed at the origin with different speeds closer and closer to the theoretical escape speed. For smaller speeds the Earth is bound in an elliptical orbit, but as the speed increases this orbit gets larger and larger axis, before it finally turns into a parabola and the Earth escapes. As expected the energy $E=-1.53653\times 10^{-7}$ for $v=8$ is negative, and goes towards zero as the speed goes toward the escape speed. Calculating the Earth's speed for a random sample from \cite{eph} gives a value of $v_{Earth}\approx6.37$, which means the Earth will remain safely in orbit around the Sun.
+With a fixed Sun at the origin the theoretical escape velocity, or more correctly escape speed, of the Earth was in equation \ref{eq:esc} shown to be (skipping units) $v=\sqrt{8}\pi\approx8.8857658763$. Figure \ref{fig:esc} shows the simulations of the 2-body problem with the Sun fixed at the origin with different speeds closer and closer to the theoretical escape speed. For smaller speeds the Earth is bound in an elliptical orbit, but as the speed increases the planet goes into a larger and larger elliptical orbit, before it finally turns into a parabola and the Earth escapes. As expected the energy $E=-1.53653\times 10^{-7}$ for $v=8$ is negative, and goes towards zero as the speed goes toward the escape speed. Calculating the Earth's speed for a random sample from \cite{eph} gives a value of $v_{Earth}\approx6.37$, which means the Earth will remain safely in orbit around the Sun.
 
 \begin{figure}
 \centering
@@ -286,7 +286,7 @@ Adding Jupiter to the Earth-Sun system, the problem turns into a three-body prob
 \label{fig:3body}
 \end{figure}
 
-As seen in figure \ref{subfig:3body_big_fixed} the Earth's orbit around the Sun is still stable even with the mass of Jupiter being increased by a factor of 10. The perturbations in the orbit due to Jupiter is difficult to see at this scale. However, if the forces on the Sun is also considered, the motion of the Sun due to the gravity force from Jupiter can be observed. The Sun is approximately 1AU from the Earth while Jupiter is approximately 5.20AU from the Sun and therefore approximately 4.20AU from the Earth when the planets are aligned and the gravity force falls off as $1/r^2$. Therefore, the main contribution to the change in the orbit of the Earth is not from Jupiter itself, but from the change in the Sun's position due to the gravitational force from Jupiter, as can be seen in figure \ref{subfig:3body_big}. 
+As seen in figure \ref{subfig:3body_big_fixed} the Earth's orbit around the Sun is still stable even with the mass of Jupiter being increased by a factor of 10. The perturbations in the orbit due to Jupiter is difficult to see at this scale. However, if the forces on the Sun is also considered, the motion of the Sun due to the gravitational force from Jupiter can be observed. The Sun is approximately 1AU from the Earth while Jupiter is approximately 5.20AU from the Sun and therefore approximately 4.20AU from the Earth when the planets are aligned. The gravitational force falls off as $1/r^2$. Therefore, the main contribution to the change in the orbit of the Earth is not from Jupiter itself, but from the change in the Sun's position due to the gravitational force from Jupiter, as can be seen in figure \ref{subfig:3body_big}. 
 
 Increasing the mass of Jupiter further, with a factor of 1000, the system becomes unstable for the fixed Sun and the Earth escapes the solar system. Assuming the Sun is not affected by the gravitational force from the planets is clearly a poor approximation now that Jupiter's mass is of the same order of magnitude as the Sun's mass. This is shown in figure \ref{subfig:3body_huge_fixed}. A smaller step size is needed to capture the complicated motions of the Earth when the Sun is fixed. If the gravitational forces acting on the Sun is considered the solution again becomes stable, as seen in figure \ref{subfig:3body_huge}. The Sun and Jupiter start orbiting the system's new center of mass and the Earth follows in orbit around the Sun.
 
@@ -324,12 +324,12 @@ Finally, adding all the planets in the solar system the problem becomes a 9-body
 \FloatBarrier
 \subsection{Mercury's perihelion precession}
 
-Removing effect on Mercury's orbit from the gravitational force from the other planets there is still some part of the observed precession that is unaccounted for. By using the modified Newtonian gravitational force in \ref{eq:grav_gr} and solving the two-body problem of the Mercury-Sun system this effect can be seen. Starting with Mercury at perihelion at $t_0$ and with $\bm{x}_0=(0.3075AU, 0, 0)$ and $\bm{v}_0=(0, 12.44AU/year, 0)$, the perihelion angle can be calculated as $\theta_p = \arctan{(y_p/x_p)}$, where $x_p$ and $y_p$ is the $x$ and $y$ coordinate of the perihelion. This motion is 2-dimensional and the z-coordinate is ignored. With $r^2 = x_p^2 + y_p^2$, finding the perihelion positions is the problem of finding all the minimum values of $r$ over the duration of the simulation. This is done and figure \ref{fig:peri} shows how the perihelion angle changes over time. The simulation is run with a time step of $h=10^{-6}$ and a duration of 100 years. The time step is not small enough to determine the perihelion position with high precision, which causes the fluctuations seen in the figure, but it is small enough to see the trend. The theory of general relativity predicts a perihelion precession of 43$''$ per century, as described in section \ref{sec:gr}, which is approximately 0.01194 degrees. The simulation clearly shows a linear trend in the perihelion precession and the magnitude over one century seem likely to be 43$''$. 
+Removing the effect on Mercury's orbit from the gravitational force from the other planets there is still some part of the observed precession that is unaccounted for. By using the modified Newtonian gravitational force in \ref{eq:grav_gr} and solving the two-body problem of the Mercury-Sun system this effect can be seen. Starting with Mercury at perihelion at $t_0$ and with $\bm{x}_0=(0.3075AU, 0, 0)$ and $\bm{v}_0=(0, 12.44AU/year, 0)$, the perihelion angle can be calculated as $\theta_p = \arctan{(y_p/x_p)}$, where $x_p$ and $y_p$ is the $x$ and $y$ coordinate of the perihelion. This motion is 2-dimensional and the z-coordinate is ignored. With $r^2 = x_p^2 + y_p^2$, finding the perihelion positions is the problem of finding all the minimum values of $r$ over the duration of the simulation. This is done and figure \ref{fig:peri} shows how the perihelion angle changes over time. The simulation is run with a time step of $h=10^{-6}$ and a duration of 100 years. The time step is not small enough to determine the perihelion position with high precision, which causes the fluctuations seen in the figure, but it is small enough to see the trend. The theory of general relativity predicts a perihelion precession of 43$''$ per century, as described in section \ref{sec:gr}, which is approximately 0.01194 degrees. The simulation clearly shows a linear trend in the perihelion precession and the value over one century is close to 43$''$. 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth]{fig/Perihelion_Precession.pdf}
-\caption{Angular change in arc seconds in Mercury's perihelion for each revolution around the Sun.}
+\caption{Angular change in arc seconds in Mercury's perihelion for each revolution around the Sun for a simulation run over 100 years.}
 \label{fig:peri}
 \end{figure}
 
@@ -349,7 +349,6 @@ The Sun is the by far most important contributor to the planets orbits, but the 
 \bibitem{horizon} http://ssd.jpl.nasa.gov/horizons.cgi Jet Propulsion Laboratory - Horizons web interface
 \bibitem{eph} ftp://ssd.jpl.nasa.gov/pub/eph/planets/bsp Jet Propulsion Laboratory - Ephemerides files
 \bibitem{jplephem} https://pypi.python.org/pypi/jplephem - Parser for ephemerides files
-%\bibitem{arma} http://arma.sourceforge.net/. C++ linear algebra library
 \end{thebibliography}
 
 
