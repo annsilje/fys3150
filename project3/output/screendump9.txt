@@ -1,0 +1,40 @@
+Reading ../input/init_solar_system_2015_12_01.txt
+Sun Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune 
+Total momentum of planets  [-0.000447323, -0.0022607, -0.000965193] solarmasses*AU/year
+Changing Sun veloctiy from [0.00043267, 0.00227955, 0.000973877] to [0.000447323, 0.0022607, 0.000965193]
+Total momentum of system   [-3.04932e-20, 5.14996e-19, 1.69407e-20] solarmasses*AU/year
+
+ STARTING INTEGRATION 
+-------------------------
+  o Number of steps:     200000
+  o Time step, dt:       0.001
+  o Duration (years):    200
+  o Initial condition:   Solar System
+  o Number of particles: 9
+  o Potential in use:    Newtonian gravity
+  o Integrator in use:   Velocity verlet
+  o Sun fixed to origin: 0
+  o Ephemerides file:    ../input/init_solar_system_2015_12_01.txt
+
+Step:          1 E=-4.39186e-03 Ek=4.05837e-03 Ep=-8.45023e-03 P=1.66674e-19 L=2.19438e-02
+Step:      10000 E=-4.39186e-03 Ek=4.40051e-03 Ep=-8.79237e-03 P=1.17417e-17 L=2.19438e-02
+Step:      20000 E=-4.39186e-03 Ek=4.75276e-03 Ep=-9.14462e-03 P=9.07569e-18 L=2.19438e-02
+Step:      30000 E=-4.39186e-03 Ek=4.66103e-03 Ep=-9.05289e-03 P=1.88737e-17 L=2.19438e-02
+Step:      40000 E=-4.39186e-03 Ek=4.42444e-03 Ep=-8.81630e-03 P=2.62796e-17 L=2.19438e-02
+Step:      50000 E=-4.39186e-03 Ek=4.17573e-03 Ep=-8.56759e-03 P=3.75322e-17 L=2.19438e-02
+Step:      60000 E=-4.39186e-03 Ek=4.00721e-03 Ep=-8.39907e-03 P=4.92433e-17 L=2.19438e-02
+Step:      70000 E=-4.39186e-03 Ek=4.28759e-03 Ep=-8.67945e-03 P=5.04870e-17 L=2.19438e-02
+Step:      80000 E=-4.39186e-03 Ek=4.64378e-03 Ep=-9.03564e-03 P=5.40110e-17 L=2.19438e-02
+Step:      90000 E=-4.39186e-03 Ek=4.69087e-03 Ep=-9.08273e-03 P=5.28910e-17 L=2.19438e-02
+Step:     100000 E=-4.39186e-03 Ek=4.56206e-03 Ep=-8.95392e-03 P=4.21464e-17 L=2.19438e-02
+Step:     110000 E=-4.39186e-03 Ek=4.24920e-03 Ep=-8.64106e-03 P=5.81033e-17 L=2.19438e-02
+Step:     120000 E=-4.39186e-03 Ek=4.00426e-03 Ep=-8.39612e-03 P=5.38701e-17 L=2.19438e-02
+Step:     130000 E=-4.39186e-03 Ek=4.20269e-03 Ep=-8.59455e-03 P=6.29591e-17 L=2.19438e-02
+Step:     140000 E=-4.39186e-03 Ek=4.51438e-03 Ep=-8.90624e-03 P=5.21572e-17 L=2.19438e-02
+Step:     150000 E=-4.39186e-03 Ek=4.67890e-03 Ep=-9.07076e-03 P=3.57662e-17 L=2.19438e-02
+Step:     160000 E=-4.39186e-03 Ek=4.68954e-03 Ep=-9.08140e-03 P=3.50737e-17 L=2.19438e-02
+Step:     170000 E=-4.39186e-03 Ek=4.34098e-03 Ep=-8.73283e-03 P=1.35359e-17 L=2.19438e-02
+Step:     180000 E=-4.39186e-03 Ek=4.03057e-03 Ep=-8.42243e-03 P=2.97923e-17 L=2.19438e-02
+Step:     190000 E=-4.39186e-03 Ek=4.14355e-03 Ep=-8.53541e-03 P=4.15807e-17 L=2.19438e-02
+Step:     200000 E=-4.39186e-03 Ek=4.38010e-03 Ep=-8.77196e-03 P=4.05863e-17 L=2.19438e-02
+Finished in 4.33009seconds.

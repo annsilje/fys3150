@@ -1,0 +1,11 @@
+./project3 0 0.001 10000 > ../output/screendump0.txt
+./project3 1 0.001 10000 > ../output/screendump1.txt
+./project3 2 0.001 10000 > ../output/screendump2.txt
+./project3 3 0.001 100000 > ../output/screendump3.txt
+./project3 4 0.001 100000 > ../output/screendump4.txt
+./project3 5 0.001 100000 > ../output/screendump5.txt
+./project3 6 0.001 100000 > ../output/screendump6.txt
+./project3 7 0.000001 100000000 > ../output/screendump7.txt
+
+./project3 9 0.001 200000 > ../output/screendump9.txt
+

@@ -1,0 +1,76 @@
+Reading ../input/init_solar_system_2015_12_01.txt
+Sun Earth Jupiter 
+ STARTING INTEGRATION 
+-------------------------
+  o Number of steps:     100000
+  o Time step, dt:       0.001
+  o Duration (years):    100
+  o Initial condition:   Three-body 10xJupiter Mass
+  o Number of particles: 3
+  o Potential in use:    Newtonian gravity
+  o Integrator in use:   Velocity verlet
+  o Sun fixed to origin: 1
+  o Ephemerides file:    ../input/init_solar_system_2015_12_01.txt
+
+Step:          1 E=-3.61345e-02 Ek=3.33129e-02 Ep=-6.94474e-02 P=2.26711e-02 L=1.35867e-01
+Step:       5000 E=-3.61345e-02 Ek=3.75573e-02 Ep=-7.36918e-02 P=2.85585e-02 L=1.35977e-01
+Step:      10000 E=-3.61345e-02 Ek=3.61348e-02 Ep=-7.22693e-02 P=2.52819e-02 L=1.35950e-01
+Step:      15000 E=-3.61345e-02 Ek=3.42285e-02 Ep=-7.03630e-02 P=2.51694e-02 L=1.35883e-01
+Step:      20000 E=-3.61345e-02 Ek=3.92984e-02 Ep=-7.54329e-02 P=2.87898e-02 L=1.36036e-01
+Step:      25000 E=-3.61345e-02 Ek=3.27269e-02 Ep=-6.88614e-02 P=2.26759e-02 L=1.35846e-01
+Step:      30000 E=-3.61345e-02 Ek=3.95079e-02 Ep=-7.56424e-02 P=2.98947e-02 L=1.36035e-01
+Step:      35000 E=-3.61345e-02 Ek=3.39520e-02 Ep=-7.00865e-02 P=2.31714e-02 L=1.35886e-01
+Step:      40000 E=-3.61345e-02 Ek=3.65098e-02 Ep=-7.26443e-02 P=2.76326e-02 L=1.35947e-01
+Step:      45000 E=-3.61345e-02 Ek=3.71878e-02 Ep=-7.33223e-02 P=2.63844e-02 L=1.35980e-01
+Step:      50000 E=-3.61345e-02 Ek=3.35172e-02 Ep=-6.96517e-02 P=2.42120e-02 L=1.35864e-01
+Step:      55000 E=-3.61345e-02 Ek=3.97821e-02 Ep=-7.59166e-02 P=2.94876e-02 L=1.36048e-01
+Step:      60000 E=-3.61345e-02 Ek=3.28071e-02 Ep=-6.89416e-02 P=2.24639e-02 L=1.35850e-01
+Step:      65000 E=-3.61345e-02 Ek=3.88302e-02 Ep=-7.49647e-02 P=2.95176e-02 L=1.36014e-01
+Step:      70000 E=-3.61345e-02 Ek=3.47816e-02 Ep=-7.09161e-02 P=2.39306e-02 L=1.35911e-01
+Step:      75000 E=-3.61345e-02 Ek=3.54754e-02 Ep=-7.16099e-02 P=2.66023e-02 L=1.35917e-01
+Step:      80000 E=-3.61345e-02 Ek=3.81919e-02 Ep=-7.43264e-02 P=2.74809e-02 L=1.36007e-01
+Step:      85000 E=-3.61345e-02 Ek=3.30198e-02 Ep=-6.91543e-02 P=2.34092e-02 L=1.35852e-01
+Step:      90000 E=-3.61345e-02 Ek=3.99158e-02 Ep=-7.60503e-02 P=2.98891e-02 L=1.36050e-01
+Step:      95000 E=-3.61345e-02 Ek=3.31337e-02 Ep=-6.92682e-02 P=2.25552e-02 L=1.35861e-01
+Step:     100000 E=-3.61345e-02 Ek=3.79257e-02 Ep=-7.40602e-02 P=2.88625e-02 L=1.35987e-01
+Finished in 0.603882seconds.
+Reading ../input/init_solar_system_2015_12_01.txt
+Sun Earth Jupiter 
+Total momentum of planets  [-0.00905533, -0.0216293, -0.00905083] solarmasses*AU/year
+Changing Sun veloctiy from [0.00043267, 0.00227955, 0.000973877] to [0.00905533, 0.0216293, 0.00905083]
+Total momentum of system   [0, 0, 0] solarmasses*AU/year
+
+ STARTING INTEGRATION 
+-------------------------
+  o Number of steps:     100000
+  o Time step, dt:       0.001
+  o Duration (years):    100
+  o Initial condition:   Three-body 10xJupiter Mass
+  o Number of particles: 3
+  o Potential in use:    Newtonian gravity
+  o Integrator in use:   Velocity verlet
+  o Sun fixed to origin: 0
+  o Ephemerides file:    ../input/init_solar_system_2015_12_01.txt
+
+Step:          1 E=-3.58218e-02 Ek=3.36256e-02 Ep=-6.94474e-02 P=3.46945e-18 L=1.35934e-01
+Step:       5000 E=-3.58218e-02 Ek=3.66040e-02 Ep=-7.24258e-02 P=1.16978e-16 L=1.35934e-01
+Step:      10000 E=-3.58218e-02 Ek=3.63532e-02 Ep=-7.21750e-02 P=1.54570e-16 L=1.35934e-01
+Step:      15000 E=-3.58218e-02 Ek=3.37858e-02 Ep=-6.96076e-02 P=2.24745e-16 L=1.35934e-01
+Step:      20000 E=-3.58218e-02 Ek=3.88120e-02 Ep=-7.46338e-02 P=3.17639e-16 L=1.35934e-01
+Step:      25000 E=-3.58218e-02 Ek=3.29433e-02 Ep=-6.87651e-02 P=2.81966e-16 L=1.35934e-01
+Step:      30000 E=-3.58218e-02 Ek=3.81822e-02 Ep=-7.40040e-02 P=3.67655e-16 L=1.35934e-01
+Step:      35000 E=-3.58218e-02 Ek=3.46513e-02 Ep=-7.04731e-02 P=3.83354e-16 L=1.35934e-01
+Step:      40000 E=-3.58218e-02 Ek=3.52462e-02 Ep=-7.10680e-02 P=3.43345e-16 L=1.35934e-01
+Step:      45000 E=-3.58218e-02 Ek=3.76612e-02 Ep=-7.34830e-02 P=2.80640e-16 L=1.35934e-01
+Step:      50000 E=-3.58218e-02 Ek=3.31000e-02 Ep=-6.89218e-02 P=3.54361e-16 L=1.35934e-01
+Step:      55000 E=-3.58218e-02 Ek=3.89814e-02 Ep=-7.48032e-02 P=3.38085e-16 L=1.35934e-01
+Step:      60000 E=-3.58218e-02 Ek=3.34033e-02 Ep=-6.92251e-02 P=3.15344e-16 L=1.35934e-01
+Step:      65000 E=-3.58218e-02 Ek=3.69956e-02 Ep=-7.28174e-02 P=4.41810e-16 L=1.35934e-01
+Step:      70000 E=-3.58218e-02 Ek=3.59531e-02 Ep=-7.17749e-02 P=4.49268e-16 L=1.35934e-01
+Step:      75000 E=-3.58218e-02 Ek=3.40663e-02 Ep=-6.98881e-02 P=3.60299e-16 L=1.35934e-01
+Step:      80000 E=-3.58218e-02 Ek=3.86327e-02 Ep=-7.44546e-02 P=1.92548e-16 L=1.35934e-01
+Step:      85000 E=-3.58218e-02 Ek=3.29036e-02 Ep=-6.87254e-02 P=1.89244e-16 L=1.35934e-01
+Step:      90000 E=-3.58218e-02 Ek=3.84502e-02 Ep=-7.42720e-02 P=2.98943e-16 L=1.35934e-01
+Step:      95000 E=-3.58218e-02 Ek=3.43161e-02 Ep=-7.01379e-02 P=3.60373e-16 L=1.35934e-01
+Step:     100000 E=-3.58218e-02 Ek=3.56330e-02 Ep=-7.14548e-02 P=3.48322e-16 L=1.35934e-01
+Finished in 0.593588seconds.

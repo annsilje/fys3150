@@ -1,0 +1,144 @@
+Reading ../input/init_sun_earth.txt
+Sun Earth 
+ STARTING INTEGRATION 
+-------------------------
+  o Number of steps:     10000
+  o Time step, dt:       0.001
+  o Duration (years):    10
+  o Initial condition:   Two-body
+  o Number of particles: 2
+  o Potential in use:    Newtonian gravity
+  o Integrator in use:   Velocity verlet
+  o Sun fixed to origin: 1
+  o Ephemerides file:    ../input/init_sun_earth.txt
+
+Step:          1 E=9.18437e-14 Ek=1.18433e-04 Ep=-1.18433e-04 P=2.66570e-05 L=2.66573e-05
+Step:        500 E=5.98276e-10 Ek=4.12455e-05 Ep=-4.12449e-05 P=1.57313e-05 L=2.66573e-05
+Step:       1000 E=5.86812e-10 Ek=2.45733e-05 Ep=-2.45727e-05 P=1.21425e-05 L=2.66573e-05
+Step:       1500 E=5.85236e-10 Ek=1.81817e-05 Ep=-1.81812e-05 P=1.04446e-05 L=2.66573e-05
+Step:       2000 E=5.84811e-10 Ek=1.47239e-05 Ep=-1.47233e-05 P=9.39910e-06 L=2.66573e-05
+Step:       2500 E=5.84650e-10 Ek=1.25230e-05 Ep=-1.25224e-05 P=8.66822e-06 L=2.66573e-05
+Step:       3000 E=5.84575e-10 Ek=1.09833e-05 Ep=-1.09827e-05 P=8.11785e-06 L=2.66573e-05
+Step:       3500 E=5.84536e-10 Ek=9.83722e-06 Ep=-9.83663e-06 P=7.68266e-06 L=2.66573e-05
+Step:       4000 E=5.84513e-10 Ek=8.94614e-06 Ep=-8.94555e-06 P=7.32645e-06 L=2.66573e-05
+Step:       4500 E=5.84499e-10 Ek=8.23044e-06 Ep=-8.22985e-06 P=7.02728e-06 L=2.66573e-05
+Step:       5000 E=5.84490e-10 Ek=7.64101e-06 Ep=-7.64043e-06 P=6.77097e-06 L=2.66573e-05
+Step:       5500 E=5.84483e-10 Ek=7.14580e-06 Ep=-7.14521e-06 P=6.54788e-06 L=2.66573e-05
+Step:       6000 E=5.84479e-10 Ek=6.72292e-06 Ep=-6.72234e-06 P=6.35118e-06 L=2.66573e-05
+Step:       6500 E=5.84475e-10 Ek=6.35693e-06 Ep=-6.35634e-06 P=6.17589e-06 L=2.66573e-05
+Step:       7000 E=5.84473e-10 Ek=6.03653e-06 Ep=-6.03595e-06 P=6.01824e-06 L=2.66573e-05
+Step:       7500 E=5.84471e-10 Ek=5.75332e-06 Ep=-5.75274e-06 P=5.87537e-06 L=2.66573e-05
+Step:       8000 E=5.84469e-10 Ek=5.50087e-06 Ep=-5.50029e-06 P=5.74502e-06 L=2.66573e-05
+Step:       8500 E=5.84468e-10 Ek=5.27418e-06 Ep=-5.27359e-06 P=5.62539e-06 L=2.66573e-05
+Step:       9000 E=5.84467e-10 Ek=5.06930e-06 Ep=-5.06871e-06 P=5.51505e-06 L=2.66573e-05
+Step:       9500 E=5.84467e-10 Ek=4.88307e-06 Ep=-4.88249e-06 P=5.41280e-06 L=2.66573e-05
+Step:      10000 E=5.84466e-10 Ek=4.71293e-06 Ep=-4.71234e-06 P=5.31767e-06 L=2.66573e-05
+Finished in 0.055623seconds.
+Reading ../input/init_sun_earth_bound1.txt
+Sun Earth 
+ STARTING INTEGRATION 
+-------------------------
+  o Number of steps:     10000
+  o Time step, dt:       0.001
+  o Duration (years):    10
+  o Initial condition:   Two-body
+  o Number of particles: 2
+  o Potential in use:    Newtonian gravity
+  o Integrator in use:   Velocity verlet
+  o Sun fixed to origin: 1
+  o Ephemerides file:    ../input/init_sun_earth_bound1.txt
+
+Step:          1 E=-2.24353e-05 Ek=9.59985e-05 Ep=-1.18434e-04 P=2.39998e-05 L=2.40000e-05
+Step:        500 E=-2.24348e-05 Ek=2.99842e-05 Ep=-5.24190e-05 P=1.34129e-05 L=2.40000e-05
+Step:       1000 E=-2.24348e-05 Ek=1.28457e-05 Ep=-3.52805e-05 P=8.77918e-06 L=2.40000e-05
+Step:       1500 E=-2.24348e-05 Ek=7.19684e-06 Ep=-2.96317e-05 P=6.57123e-06 L=2.40000e-05
+Step:       2000 E=-2.24348e-05 Ek=5.33327e-06 Ep=-2.77681e-05 P=5.65682e-06 L=2.40000e-05
+Step:       2500 E=-2.24348e-05 Ek=5.80492e-06 Ep=-2.82397e-05 P=5.90166e-06 L=2.40000e-05
+Step:       3000 E=-2.24348e-05 Ek=8.93904e-06 Ep=-3.13739e-05 P=7.32354e-06 L=2.40000e-05
+Step:       3500 E=-2.24348e-05 Ek=1.76402e-05 Ep=-4.00751e-05 P=1.02879e-05 L=2.40000e-05
+Step:       4000 E=-2.24348e-05 Ek=4.98093e-05 Ep=-7.22441e-05 P=1.72874e-05 L=2.40000e-05
+Step:       4500 E=-2.24348e-05 Ek=6.17887e-05 Ep=-8.42236e-05 P=1.92544e-05 L=2.40000e-05
+Step:       5000 E=-2.24348e-05 Ek=2.00507e-05 Ep=-4.24855e-05 P=1.09683e-05 L=2.40000e-05
+Step:       5500 E=-2.24348e-05 Ek=9.77261e-06 Ep=-3.22074e-05 P=7.65739e-06 L=2.40000e-05
+Step:       6000 E=-2.24348e-05 Ek=6.08361e-06 Ep=-2.85184e-05 P=6.04166e-06 L=2.40000e-05
+Step:       6500 E=-2.24348e-05 Ek=5.26258e-06 Ep=-2.76974e-05 P=5.61921e-06 L=2.40000e-05
+Step:       7000 E=-2.24348e-05 Ek=6.72989e-06 Ep=-2.91647e-05 P=6.35447e-06 L=2.40000e-05
+Step:       7500 E=-2.24348e-05 Ek=1.15783e-05 Ep=-3.40131e-05 P=8.33485e-06 L=2.40000e-05
+Step:       8000 E=-2.24348e-05 Ek=2.56626e-05 Ep=-4.80974e-05 P=1.24087e-05 L=2.40000e-05
+Step:       8500 E=-2.24351e-05 Ek=8.84035e-05 Ep=-1.10839e-04 P=2.30309e-05 L=2.40000e-05
+Step:       9000 E=-2.24348e-05 Ek=3.55192e-05 Ep=-5.79540e-05 P=1.45985e-05 L=2.40000e-05
+Step:       9500 E=-2.24348e-05 Ek=1.43326e-05 Ep=-3.67674e-05 P=9.27337e-06 L=2.40000e-05
+Step:      10000 E=-2.24348e-05 Ek=7.74541e-06 Ep=-3.01802e-05 P=6.81707e-06 L=2.40000e-05
+Finished in 0.04836seconds.
+Reading ../input/init_sun_earth_bound2.txt
+Sun Earth 
+ STARTING INTEGRATION 
+-------------------------
+  o Number of steps:     10000
+  o Time step, dt:       0.001
+  o Duration (years):    10
+  o Initial condition:   Two-body
+  o Number of particles: 2
+  o Potential in use:    Newtonian gravity
+  o Integrator in use:   Velocity verlet
+  o Sun fixed to origin: 1
+  o Ephemerides file:    ../input/init_sun_earth_bound2.txt
+
+Step:          1 E=-2.27525e-06 Ek=1.16158e-04 Ep=-1.18433e-04 P=2.63997e-05 L=2.64000e-05
+Step:        500 E=-2.27467e-06 Ek=3.98157e-05 Ep=-4.20904e-05 P=1.54562e-05 L=2.64000e-05
+Step:       1000 E=-2.27468e-06 Ek=2.30027e-05 Ep=-2.52773e-05 P=1.17480e-05 L=2.64000e-05
+Step:       1500 E=-2.27468e-06 Ek=1.65534e-05 Ep=-1.88281e-05 P=9.96598e-06 L=2.64000e-05
+Step:       2000 E=-2.27468e-06 Ek=1.30662e-05 Ep=-1.53409e-05 P=8.85423e-06 L=2.64000e-05
+Step:       2500 E=-2.27468e-06 Ek=1.08483e-05 Ep=-1.31230e-05 P=8.06783e-06 L=2.64000e-05
+Step:       3000 E=-2.27468e-06 Ek=9.29786e-06 Ep=-1.15725e-05 P=7.46908e-06 L=2.64000e-05
+Step:       3500 E=-2.27468e-06 Ek=8.14484e-06 Ep=-1.04195e-05 P=6.99064e-06 L=2.64000e-05
+Step:       4000 E=-2.27468e-06 Ek=7.24914e-06 Ep=-9.52383e-06 P=6.59506e-06 L=2.64000e-05
+Step:       4500 E=-2.27468e-06 Ek=6.53042e-06 Ep=-8.80511e-06 P=6.25960e-06 L=2.64000e-05
+Step:       5000 E=-2.27468e-06 Ek=5.93910e-06 Ep=-8.21378e-06 P=5.96947e-06 L=2.64000e-05
+Step:       5500 E=-2.27468e-06 Ek=5.44281e-06 Ep=-7.71750e-06 P=5.71462e-06 L=2.64000e-05
+Step:       6000 E=-2.27468e-06 Ek=5.01950e-06 Ep=-7.29418e-06 P=5.48790e-06 L=2.64000e-05
+Step:       6500 E=-2.27468e-06 Ek=4.65354e-06 Ep=-6.92823e-06 P=5.28406e-06 L=2.64000e-05
+Step:       7000 E=-2.27468e-06 Ek=4.33357e-06 Ep=-6.60826e-06 P=5.09916e-06 L=2.64000e-05
+Step:       7500 E=-2.27468e-06 Ek=4.05110e-06 Ep=-6.32578e-06 P=4.93017e-06 L=2.64000e-05
+Step:       8000 E=-2.27468e-06 Ek=3.79963e-06 Ep=-6.07431e-06 P=4.77470e-06 L=2.64000e-05
+Step:       8500 E=-2.27468e-06 Ek=3.57413e-06 Ep=-5.84882e-06 P=4.63085e-06 L=2.64000e-05
+Step:       9000 E=-2.27468e-06 Ek=3.37063e-06 Ep=-5.64531e-06 P=4.49708e-06 L=2.64000e-05
+Step:       9500 E=-2.27468e-06 Ek=3.18592e-06 Ep=-5.46061e-06 P=4.37213e-06 L=2.64000e-05
+Step:      10000 E=-2.27468e-06 Ek=3.01744e-06 Ep=-5.29212e-06 P=4.25495e-06 L=2.64000e-05
+Finished in 0.044571seconds.
+Reading ../input/init_sun_earth_bound3.txt
+Sun Earth 
+ STARTING INTEGRATION 
+-------------------------
+  o Number of steps:     10000
+  o Time step, dt:       0.001
+  o Duration (years):    10
+  o Initial condition:   Two-body
+  o Number of particles: 2
+  o Potential in use:    Newtonian gravity
+  o Integrator in use:   Velocity verlet
+  o Sun fixed to origin: 1
+  o Ephemerides file:    ../input/init_sun_earth_bound3.txt
+
+Step:          1 E=-1.53653e-07 Ek=1.18279e-04 Ep=-1.18433e-04 P=2.66397e-05 L=2.66400e-05
+Step:        500 E=-1.53056e-07 Ek=4.11475e-05 Ep=-4.13006e-05 P=1.57126e-05 L=2.66400e-05
+Step:       1000 E=-1.53067e-07 Ek=2.44656e-05 Ep=-2.46186e-05 P=1.21158e-05 L=2.66400e-05
+Step:       1500 E=-1.53069e-07 Ek=1.80699e-05 Ep=-1.82230e-05 P=1.04125e-05 L=2.66400e-05
+Step:       2000 E=-1.53069e-07 Ek=1.46098e-05 Ep=-1.47629e-05 P=9.36263e-06 L=2.66400e-05
+Step:       2500 E=-1.53069e-07 Ek=1.24076e-05 Ep=-1.25606e-05 P=8.62817e-06 L=2.66400e-05
+Step:       3000 E=-1.53069e-07 Ek=1.08668e-05 Ep=-1.10199e-05 P=8.07472e-06 L=2.66400e-05
+Step:       3500 E=-1.53069e-07 Ek=9.72011e-06 Ep=-9.87318e-06 P=7.63680e-06 L=2.66400e-05
+Step:       4000 E=-1.53069e-07 Ek=8.82850e-06 Ep=-8.98157e-06 P=7.27812e-06 L=2.66400e-05
+Step:       4500 E=-1.53069e-07 Ek=8.11238e-06 Ep=-8.26545e-06 P=6.97670e-06 L=2.66400e-05
+Step:       5000 E=-1.53069e-07 Ek=7.52261e-06 Ep=-7.67568e-06 P=6.71831e-06 L=2.66400e-05
+Step:       5500 E=-1.53069e-07 Ek=7.02711e-06 Ep=-7.18018e-06 P=6.49328e-06 L=2.66400e-05
+Step:       6000 E=-1.53069e-07 Ek=6.60400e-06 Ep=-6.75707e-06 P=6.29476e-06 L=2.66400e-05
+Step:       6500 E=-1.53069e-07 Ek=6.23780e-06 Ep=-6.39087e-06 P=6.11774e-06 L=2.66400e-05
+Step:       7000 E=-1.53069e-07 Ek=5.91723e-06 Ep=-6.07030e-06 P=5.95847e-06 L=2.66400e-05
+Step:       7500 E=-1.53069e-07 Ek=5.63386e-06 Ep=-5.78693e-06 P=5.81405e-06 L=2.66400e-05
+Step:       8000 E=-1.53069e-07 Ek=5.38127e-06 Ep=-5.53434e-06 P=5.68222e-06 L=2.66400e-05
+Step:       8500 E=-1.53069e-07 Ek=5.15446e-06 Ep=-5.30753e-06 P=5.56118e-06 L=2.66400e-05
+Step:       9000 E=-1.53069e-07 Ek=4.94947e-06 Ep=-5.10254e-06 P=5.44948e-06 L=2.66400e-05
+Step:       9500 E=-1.53069e-07 Ek=4.76315e-06 Ep=-4.91622e-06 P=5.34592e-06 L=2.66400e-05
+Step:      10000 E=-1.53069e-07 Ek=4.59292e-06 Ep=-4.74599e-06 P=5.24952e-06 L=2.66400e-05
+Finished in 0.044398seconds.
