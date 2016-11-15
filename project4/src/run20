@@ -1,0 +1,4 @@
+mpirun -n 1 project4 20 1000000 1.0 > ../output/screendump20x20
+mpirun -n 1 project4 20 1000000 2.4 >> ../output/screendump20x20
+mpirun -n 1 project4 20 1000000 1.0 afa >> ../output/screendump20x20
+mpirun -n 1 project4 20 1000000 2.4 afa >> ../output/screendump20x20

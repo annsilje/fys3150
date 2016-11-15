@@ -1,0 +1,60 @@
+All up start
+Starting energy: -800
+Starting magnetization: 400
+Temperature: 1
+Lattice: 20x20
+Completed 1000000 Monte Carlo cycles with 400 spins. 
+288743 of 400000000 spin flips were accepted
+Temperature:               1.0000000
+<E> per spin:             -1.9971673
+Variance E per spin:   5.4512097e-05
+Heat capacity:         5.4512097e-05
+<M> per spin:             0.99927787
+variance M per spin:   2.9326783e-06
+Susceptibility:        2.9326783e-06
+<|M|> per spin:           0.99927787
+All up start
+Starting energy: -800
+Starting magnetization: 400
+Temperature: 2.4
+Lattice: 20x20
+Completed 1000000 Monte Carlo cycles with 400 spins. 
+107697305 of 400000000 spin flips were accepted
+Temperature:               2.4000000
+<E> per spin:             -1.2372898
+Variance E per spin:     0.020275591
+Heat capacity:          0.0035200679
+<M> per spin:          -0.0094226050
+variance M per spin:     0.052758683
+Susceptibility:          0.021982785
+<|M|> per spin:           0.45522044
+Random start
+Starting energy: 16
+Starting magnetization: -20
+Temperature: 1
+Lattice: 20x20
+Completed 1000000 Monte Carlo cycles with 400 spins. 
+292124 of 400000000 spin flips were accepted
+Temperature:               1.0000000
+<E> per spin:             -1.9971369
+Variance E per spin:   6.9690787e-05
+Heat capacity:         6.9690787e-05
+<M> per spin:            -0.99918211
+variance M per spin:   6.0006756e-05
+Susceptibility:        6.0006756e-05
+<|M|> per spin:           0.99918211
+Random start
+Starting energy: -44
+Starting magnetization: 44
+Temperature: 2.4
+Lattice: 20x20
+Completed 1000000 Monte Carlo cycles with 400 spins. 
+107789710 of 400000000 spin flips were accepted
+Temperature:               2.4000000
+<E> per spin:             -1.2366660
+Variance E per spin:     0.020319185
+Heat capacity:          0.0035276363
+<M> per spin:           -0.011093290
+variance M per spin:     0.053844499
+Susceptibility:          0.022435208
+<|M|> per spin:           0.45175974

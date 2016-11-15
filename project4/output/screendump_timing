@@ -1,0 +1,75 @@
+-O3 flag and 4 processes
+Warning! No output files are produced when using more than one process .
+Random start
+Starting energy: 80
+Starting magnetization: 8
+Temperature: 2.2
+Lattice: 30x30
+Warning! No output files are produced when using more than one process .
+Random start
+Starting energy: 12
+Starting magnetization: -44
+Temperature: 2.2
+Lattice: 30x30
+Warning! No output files are produced when using more than one process .
+Random start
+Starting energy: -4
+Starting magnetization: -16
+Temperature: 2.2
+Lattice: 30x30
+Warning! No output files are produced when using more than one process .
+Random start
+Starting energy: -20
+Starting magnetization: -16
+Temperature: 2.2
+Lattice: 30x30
+Process 1 finished with 30x30 lattice after 11.9101seconds
+Process 3 finished with 30x30 lattice after 11.9117seconds
+Process 2 finished with 30x30 lattice after 11.9094seconds
+Completed 1000000 Monte Carlo cycles with 900 spins. 
+135348422 of 900000000 spin flips were accepted
+Temperature:               2.2000000
+<E> per spin:             -1.5464211
+Variance E per spin:    0.0075723607
+Heat capacity:          0.0015645373
+<M> per spin:            0.021898920
+variance M per spin:     0.010578680
+Susceptibility:         0.0048084909
+<|M|> per spin:           0.78464325
+Process 0 finished with 30x30 lattice after 11.997237seconds
+ 
+-O3 flag and 1 process
+Random start
+Starting energy: 48
+Starting magnetization: -26
+Temperature: 2.2
+Lattice: 30x30
+Completed 1000000 Monte Carlo cycles with 900 spins. 
+134981483 of 900000000 spin flips were accepted
+Temperature:               2.2000000
+<E> per spin:             -1.5475199
+Variance E per spin:    0.0074457553
+Heat capacity:          0.0015383792
+<M> per spin:            0.073999082
+variance M per spin:    0.0098288881
+Susceptibility:         0.0044676764
+<|M|> per spin:           0.78664714
+Process 0 finished with 30x30 lattice after 46.947889seconds
+ 
+no flags and 1 process 
+Random start
+Starting energy: -80
+Starting magnetization: -12
+Temperature: 2.2
+Lattice: 30x30
+Completed 1000000 Monte Carlo cycles with 900 spins. 
+135369976 of 900000000 spin flips were accepted
+Temperature:               2.2000000
+<E> per spin:             -1.5463516
+Variance E per spin:    0.0075325700
+Heat capacity:          0.0015563161
+<M> per spin:            0.019392793
+variance M per spin:    0.0098528074
+Susceptibility:         0.0044785488
+<|M|> per spin:           0.78540873
+Process 0 finished with 30x30 lattice after 237.55519seconds

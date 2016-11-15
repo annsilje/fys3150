@@ -1,0 +1,1136 @@
+Random start
+Starting energy: 76
+Starting magnetization: 64
+Temperature: 2.1
+Lattice: 40x40
+Random start
+Starting energy: -92
+Starting magnetization: 30
+Temperature: 2.1
+Lattice: 40x40
+Random start
+Starting energy: -28
+Starting magnetization: 2
+Temperature: 2.1
+Lattice: 40x40
+Random start
+Starting energy: 20
+Starting magnetization: -10
+Temperature: 2.1
+Lattice: 40x40
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+173301818 of 1600000000 spin flips were accepted
+Temperature:               2.1000000
+<E> per spin:             -1.6622717
+Variance E per spin:    0.0026888647
+Heat capacity:         0.00060971989
+<M> per spin:         -0.00019438750
+variance M per spin:    0.0014585371
+Susceptibility:        0.00069454146
+<|M|> per spin:           0.86862006
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+179009171 of 1600000000 spin flips were accepted
+Temperature:               2.1100000
+<E> per spin:             -1.6522932
+Variance E per spin:    0.0027537809
+Heat capacity:         0.00061853527
+<M> per spin:         -0.00018569625
+variance M per spin:    0.0014163305
+Susceptibility:        0.00067124670
+<|M|> per spin:           0.86292463
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+184599538 of 1600000000 spin flips were accepted
+Temperature:               2.1200000
+<E> per spin:             -1.6425734
+Variance E per spin:    0.0028479116
+Heat capacity:         0.00063365779
+<M> per spin:         -8.4106250e-05
+variance M per spin:    0.0015063316
+Susceptibility:        0.00071053378
+<|M|> per spin:           0.85750991
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+190526769 of 1600000000 spin flips were accepted
+Temperature:               2.1300000
+<E> per spin:             -1.6322200
+Variance E per spin:    0.0029736601
+Heat capacity:         0.00065543875
+<M> per spin:             0.32645784
+variance M per spin:    0.0017340158
+Susceptibility:        0.00081409191
+<|M|> per spin:           0.85122366
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+197184932 of 1600000000 spin flips were accepted
+Temperature:               2.1400000
+<E> per spin:             -1.6207200
+Variance E per spin:    0.0031591423
+Heat capacity:         0.00068982930
+<M> per spin:             0.42142271
+variance M per spin:    0.0020302152
+Susceptibility:        0.00094869870
+<|M|> per spin:           0.84323888
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+203883640 of 1600000000 spin flips were accepted
+Temperature:               2.1500000
+<E> per spin:             -1.6091592
+Variance E per spin:    0.0033170052
+Heat capacity:         0.00071757819
+<M> per spin:             0.41660500
+variance M per spin:    0.0027498706
+Susceptibility:         0.0012790096
+<|M|> per spin:           0.83432058
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+210650433 of 1600000000 spin flips were accepted
+Temperature:               2.1600000
+<E> per spin:             -1.5974973
+Variance E per spin:    0.0035247246
+Heat capacity:         0.00075547081
+<M> per spin:             0.12422812
+variance M per spin:    0.0034260850
+Susceptibility:         0.0015861505
+<|M|> per spin:           0.82585572
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+217371824 of 1600000000 spin flips were accepted
+Temperature:               2.1700000
+<E> per spin:             -1.5860333
+Variance E per spin:    0.0035936586
+Heat capacity:         0.00076316307
+<M> per spin:         -0.00046929625
+variance M per spin:    0.0031268129
+Susceptibility:         0.0014409276
+<|M|> per spin:           0.81889542
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+224539742 of 1600000000 spin flips were accepted
+Temperature:               2.1800000
+<E> per spin:             -1.5737521
+Variance E per spin:    0.0037975711
+Heat capacity:         0.00079908490
+<M> per spin:         -0.00022563000
+variance M per spin:    0.0038779943
+Susceptibility:         0.0017788964
+<|M|> per spin:           0.80897711
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+232629067 of 1600000000 spin flips were accepted
+Temperature:               2.1900000
+<E> per spin:             -1.5599703
+Variance E per spin:    0.0040080347
+Heat capacity:         0.00083568623
+<M> per spin:           -0.013950736
+variance M per spin:    0.0050731761
+Susceptibility:         0.0023165188
+<|M|> per spin:           0.79667941
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+240449540 of 1600000000 spin flips were accepted
+Temperature:               2.2000000
+<E> per spin:             -1.5467619
+Variance E per spin:    0.0042270773
+Heat capacity:         0.00087336308
+<M> per spin:            0.032043936
+variance M per spin:    0.0062228800
+Susceptibility:         0.0028285818
+<|M|> per spin:           0.78555417
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+249067862 of 1600000000 spin flips were accepted
+Temperature:               2.2100000
+<E> per spin:             -1.5321055
+Variance E per spin:    0.0044672138
+Heat capacity:         0.00091464421
+<M> per spin:             0.38908055
+variance M per spin:    0.0077249586
+Susceptibility:         0.0034954564
+<|M|> per spin:           0.77117964
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+258018826 of 1600000000 spin flips were accepted
+Temperature:               2.2200000
+<E> per spin:             -1.5170752
+Variance E per spin:    0.0047948549
+Heat capacity:         0.00097290296
+<M> per spin:            -0.21930585
+variance M per spin:     0.010308218
+Susceptibility:         0.0046433415
+<|M|> per spin:           0.75499971
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+268155395 of 1600000000 spin flips were accepted
+Temperature:               2.2300000
+<E> per spin:             -1.4999994
+Variance E per spin:    0.0051472026
+Heat capacity:          0.0010350505
+<M> per spin:             0.38338037
+variance M per spin:     0.013640427
+Susceptibility:         0.0061167832
+<|M|> per spin:           0.73368832
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+277487365 of 1600000000 spin flips were accepted
+Temperature:               2.2400000
+<E> per spin:             -1.4842699
+Variance E per spin:    0.0054161767
+Heat capacity:          0.0010794357
+<M> per spin:             0.30127199
+variance M per spin:     0.016897683
+Susceptibility:         0.0075436085
+<|M|> per spin:           0.71525213
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+287926846 of 1600000000 spin flips were accepted
+Temperature:               2.2500000
+<E> per spin:             -1.4668269
+Variance E per spin:    0.0057045321
+Heat capacity:          0.0011268212
+<M> per spin:             0.23823203
+variance M per spin:     0.019637364
+Susceptibility:         0.0087277174
+<|M|> per spin:           0.69304368
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+299982163 of 1600000000 spin flips were accepted
+Temperature:               2.2600000
+<E> per spin:             -1.4467341
+Variance E per spin:    0.0060876324
+Heat capacity:          0.0011918773
+<M> per spin:             0.11716360
+variance M per spin:     0.025848732
+Susceptibility:          0.011437492
+<|M|> per spin:           0.66111924
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+310937672 of 1600000000 spin flips were accepted
+Temperature:               2.2700000
+<E> per spin:             -1.4285826
+Variance E per spin:    0.0062678145
+Heat capacity:          0.0012163664
+<M> per spin:             0.16122583
+variance M per spin:     0.029054581
+Susceptibility:          0.012799375
+<|M|> per spin:           0.63502598
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+323747529 of 1600000000 spin flips were accepted
+Temperature:               2.2800000
+<E> per spin:             -1.4072978
+Variance E per spin:    0.0065058999
+Heat capacity:          0.0012515197
+<M> per spin:            0.020449961
+variance M per spin:     0.035947882
+Susceptibility:          0.015766615
+<|M|> per spin:           0.59532817
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+335776053 of 1600000000 spin flips were accepted
+Temperature:               2.2900000
+<E> per spin:             -1.3874374
+Variance E per spin:    0.0066438024
+Heat capacity:          0.0012669099
+<M> per spin:          -0.0013607625
+variance M per spin:     0.039367596
+Susceptibility:          0.017191090
+<|M|> per spin:           0.56156760
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+347308672 of 1600000000 spin flips were accepted
+Temperature:               2.3000000
+<E> per spin:             -1.3686113
+Variance E per spin:    0.0066365146
+Heat capacity:          0.0012545396
+<M> per spin:           -0.013217750
+variance M per spin:     0.041122812
+Susceptibility:          0.017879483
+<|M|> per spin:           0.53133688
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+360408789 of 1600000000 spin flips were accepted
+Temperature:               2.3100000
+<E> per spin:             -1.3470905
+Variance E per spin:    0.0064495084
+Heat capacity:          0.0012086558
+<M> per spin:           0.0085270663
+variance M per spin:     0.044198872
+Susceptibility:          0.019133711
+<|M|> per spin:           0.48799609
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+371197889 of 1600000000 spin flips were accepted
+Temperature:               2.3200000
+<E> per spin:             -1.3296170
+Variance E per spin:    0.0063711796
+Heat capacity:          0.0011837061
+<M> per spin:          -0.0057052150
+variance M per spin:     0.045345865
+Susceptibility:          0.019545632
+<|M|> per spin:           0.45734668
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+382535649 of 1600000000 spin flips were accepted
+Temperature:               2.3300000
+<E> per spin:             -1.3113209
+Variance E per spin:    0.0060646510
+Heat capacity:          0.0011171049
+<M> per spin:            0.013465398
+variance M per spin:     0.044168601
+Susceptibility:          0.018956481
+<|M|> per spin:           0.42497252
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+393954029 of 1600000000 spin flips were accepted
+Temperature:               2.3400000
+<E> per spin:             -1.2930683
+Variance E per spin:    0.0058058084
+Heat capacity:          0.0010603054
+<M> per spin:          -0.0026456012
+variance M per spin:     0.043727395
+Susceptibility:          0.018686921
+<|M|> per spin:           0.38728018
+Process 1 finished with 40x40 lattice after 647.076seconds
+Random start
+Starting energy: 92
+Starting magnetization: 24
+Temperature: 2.1
+Lattice: 60x60
+Process 3 finished with 40x40 lattice after 645.943seconds
+Random start
+Starting energy: -28
+Starting magnetization: -80
+Temperature: 2.1
+Lattice: 60x60
+Process 2 finished with 40x40 lattice after 647.544seconds
+Random start
+Starting energy: 80
+Starting magnetization: 2
+Temperature: 2.1
+Lattice: 60x60
+Completed 1000000 Monte Carlo cycles with 1600 spins. 
+404665914 of 1600000000 spin flips were accepted
+Temperature:               2.3500000
+<E> per spin:             -1.2760121
+Variance E per spin:    0.0054215142
+Heat capacity:         0.00098171376
+<M> per spin:           0.0012676375
+variance M per spin:     0.040417479
+Susceptibility:          0.017198927
+<|M|> per spin:           0.35858580
+Process 0 finished with 40x40 lattice after 650.79342seconds
+Random start
+Starting energy: 8.0000000
+Starting magnetization: -138.00000
+Temperature: 2.1000000
+Lattice: 60x60
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+390966533 of 3600000000 spin flips were accepted
+Temperature:               2.1000000
+<E> per spin:             -1.6614495
+Variance E per spin:    0.0012773643
+Heat capacity:         0.00028965177
+<M> per spin:             0.43327564
+variance M per spin:    0.0024741253
+Susceptibility:         0.0011781549
+<|M|> per spin:           0.86580309
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+402611845 of 3600000000 spin flips were accepted
+Temperature:               2.1100000
+<E> per spin:             -1.6524162
+Variance E per spin:    0.0012184692
+Heat capacity:         0.00027368415
+<M> per spin:             0.43168295
+variance M per spin:   0.00062009862
+Susceptibility:        0.00029388560
+<|M|> per spin:           0.86319287
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+415993151 of 3600000000 spin flips were accepted
+Temperature:               2.1200000
+<E> per spin:             -1.6420101
+Variance E per spin:    0.0012663569
+Heat capacity:         0.00028176329
+<M> per spin:             0.42834651
+variance M per spin:   0.00070542896
+Susceptibility:        0.00033274951
+<|M|> per spin:           0.85668521
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+429255846 of 3600000000 spin flips were accepted
+Temperature:               2.1300000
+<E> per spin:             -1.6317877
+Variance E per spin:    0.0013222912
+Heat capacity:         0.00029145257
+<M> per spin:             0.42508730
+variance M per spin:   0.00078400816
+Susceptibility:        0.00036807895
+<|M|> per spin:           0.85052254
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+443281599 of 3600000000 spin flips were accepted
+Temperature:               2.1400000
+<E> per spin:             -1.6210096
+Variance E per spin:    0.0013915383
+Heat capacity:         0.00030385587
+<M> per spin:             0.42167542
+variance M per spin:   0.00092950850
+Susceptibility:        0.00043434977
+<|M|> per spin:           0.84337148
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+457831314 of 3600000000 spin flips were accepted
+Temperature:               2.1500000
+<E> per spin:             -1.6097941
+Variance E per spin:    0.0014462636
+Heat capacity:         0.00031287477
+<M> per spin:             0.41814156
+variance M per spin:    0.0010278933
+Susceptibility:        0.00047808989
+<|M|> per spin:           0.83607663
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+472589791 of 3600000000 spin flips were accepted
+Temperature:               2.1600000
+<E> per spin:             -1.5986240
+Variance E per spin:    0.0015261289
+Heat capacity:         0.00032710240
+<M> per spin:             0.41375790
+variance M per spin:    0.0013224734
+Susceptibility:        0.00061225621
+<|M|> per spin:           0.82779568
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+489116881 of 3600000000 spin flips were accepted
+Temperature:               2.1700000
+<E> per spin:             -1.5860052
+Variance E per spin:    0.0016138025
+Heat capacity:         0.00034271327
+<M> per spin:             0.40886038
+variance M per spin:    0.0018061717
+Susceptibility:        0.00083233719
+<|M|> per spin:           0.81781869
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+505222801 of 3600000000 spin flips were accepted
+Temperature:               2.1800000
+<E> per spin:             -1.5737594
+Variance E per spin:    0.0016660891
+Heat capacity:         0.00035057846
+<M> per spin:             0.40425013
+variance M per spin:    0.0017747860
+Susceptibility:        0.00081412203
+<|M|> per spin:           0.80906860
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+523229520 of 3600000000 spin flips were accepted
+Temperature:               2.1900000
+<E> per spin:             -1.5601574
+Variance E per spin:    0.0017853777
+Heat capacity:         0.00037225614
+<M> per spin:             0.16560326
+variance M per spin:    0.0028251667
+Susceptibility:         0.0012900305
+<|M|> per spin:           0.79675656
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+541428903 of 3600000000 spin flips were accepted
+Temperature:               2.2000000
+<E> per spin:             -1.5463637
+Variance E per spin:    0.0018790842
+Heat capacity:         0.00038824053
+<M> per spin:          -0.0012687100
+variance M per spin:    0.0028949653
+Susceptibility:         0.0013158933
+<|M|> per spin:           0.78466228
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+560425947 of 3600000000 spin flips were accepted
+Temperature:               2.2100000
+<E> per spin:             -1.5321342
+Variance E per spin:    0.0020528270
+Heat capacity:         0.00042030815
+<M> per spin:            -0.20010188
+variance M per spin:    0.0042496095
+Susceptibility:         0.0019229002
+<|M|> per spin:           0.77038110
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+580548660 of 3600000000 spin flips were accepted
+Temperature:               2.2200000
+<E> per spin:             -1.5170179
+Variance E per spin:    0.0021287380
+Heat capacity:         0.00043193287
+<M> per spin:            -0.37494137
+variance M per spin:    0.0048292231
+Susceptibility:         0.0021753257
+<|M|> per spin:           0.75483177
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+602823249 of 3600000000 spin flips were accepted
+Temperature:               2.2300000
+<E> per spin:             -1.5003674
+Variance E per spin:    0.0022864216
+Heat capacity:         0.00045977631
+<M> per spin:            -0.26685157
+variance M per spin:    0.0064052971
+Susceptibility:         0.0028723306
+<|M|> per spin:           0.73484886
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+626006264 of 3600000000 spin flips were accepted
+Temperature:               2.2400000
+<E> per spin:             -1.4830573
+Variance E per spin:    0.0024972152
+Heat capacity:         0.00049769117
+<M> per spin:           -0.036537662
+variance M per spin:     0.010742438
+Susceptibility:         0.0047957312
+<|M|> per spin:           0.70974295
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+652377026 of 3600000000 spin flips were accepted
+Temperature:               2.2500000
+<E> per spin:             -1.4634199
+Variance E per spin:    0.0027376284
+Heat capacity:         0.00054076610
+<M> per spin:            0.049361981
+variance M per spin:     0.015598150
+Susceptibility:         0.0069325111
+<|M|> per spin:           0.67645556
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+679402067 of 3600000000 spin flips were accepted
+Temperature:               2.2600000
+<E> per spin:             -1.4433297
+Variance E per spin:    0.0030310299
+Heat capacity:         0.00059343525
+<M> per spin:            0.058425849
+variance M per spin:     0.023909910
+Susceptibility:          0.010579606
+<|M|> per spin:           0.63802097
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+708054234 of 3600000000 spin flips were accepted
+Temperature:               2.2700000
+<E> per spin:             -1.4220864
+Variance E per spin:    0.0031325985
+Heat capacity:         0.00060792923
+<M> per spin:          -0.0016729489
+variance M per spin:     0.028754426
+Susceptibility:          0.012667148
+<|M|> per spin:           0.59693562
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+737290805 of 3600000000 spin flips were accepted
+Temperature:               2.2800000
+<E> per spin:             -1.4005510
+Variance E per spin:    0.0032011362
+Heat capacity:         0.00061579258
+<M> per spin:             0.12704616
+variance M per spin:     0.033061364
+Susceptibility:          0.014500598
+<|M|> per spin:           0.55178811
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+768668460 of 3600000000 spin flips were accepted
+Temperature:               2.2900000
+<E> per spin:             -1.3774483
+Variance E per spin:    0.0032201363
+Heat capacity:         0.00061404937
+<M> per spin:           -0.083782152
+variance M per spin:     0.038100844
+Susceptibility:          0.016637923
+<|M|> per spin:           0.49669235
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+794949770 of 3600000000 spin flips were accepted
+Temperature:               2.3000000
+<E> per spin:             -1.3583309
+Variance E per spin:    0.0031186044
+Heat capacity:         0.00058952825
+<M> per spin:           -0.010181148
+variance M per spin:     0.039888838
+Susceptibility:          0.017342973
+<|M|> per spin:           0.45451900
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+825216994 of 3600000000 spin flips were accepted
+Temperature:               2.3100000
+<E> per spin:             -1.3362976
+Variance E per spin:    0.0029496186
+Heat capacity:         0.00055276673
+<M> per spin:           0.0046347978
+variance M per spin:     0.039508975
+Susceptibility:          0.017103453
+<|M|> per spin:           0.39917395
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+849672213 of 3600000000 spin flips were accepted
+Temperature:               2.3200000
+<E> per spin:             -1.3187555
+Variance E per spin:    0.0027862068
+Heat capacity:         0.00051765138
+<M> per spin:           -0.036514626
+variance M per spin:     0.038267017
+Susceptibility:          0.016494404
+<|M|> per spin:           0.36244179
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+878503142 of 3600000000 spin flips were accepted
+Temperature:               2.3300000
+<E> per spin:             -1.2979981
+Variance E per spin:    0.0025096264
+Heat capacity:         0.00046227162
+<M> per spin:          -0.0098724428
+variance M per spin:     0.034280209
+Susceptibility:          0.014712536
+<|M|> per spin:           0.30364498
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+900404824 of 3600000000 spin flips were accepted
+Temperature:               2.3400000
+<E> per spin:             -1.2825175
+Variance E per spin:    0.0023448938
+Heat capacity:         0.00042824417
+<M> per spin:          -0.0081173861
+variance M per spin:     0.030133281
+Susceptibility:          0.012877470
+<|M|> per spin:           0.27629072
+Process 3 finished with 60x60 lattice after 1480.18seconds
+Random start
+Starting energy: -144
+Starting magnetization: 132
+Temperature: 2.1
+Lattice: 100x100
+Process 2 finished with 60x60 lattice after 1491.34seconds
+Random start
+Starting energy: 8
+Starting magnetization: -8
+Temperature: 2.1
+Lattice: 100x100
+Process 1 finished with 60x60 lattice after 1526.28seconds
+Random start
+Starting energy: -240
+Starting magnetization: -180
+Temperature: 2.1
+Lattice: 100x100
+Completed 1000000 Monte Carlo cycles with 3600 spins. 
+920042847 of 3600000000 spin flips were accepted
+Temperature:               2.3500000
+<E> per spin:             -1.2688039
+Variance E per spin:    0.0022245750
+Heat capacity:         0.00040282027
+<M> per spin:           0.0068974222
+variance M per spin:     0.026931853
+Susceptibility:          0.011460363
+<|M|> per spin:           0.25569866
+Process 0 finished with 60x60 lattice after 1517.6835seconds
+Random start
+Starting energy: -152.00000
+Starting magnetization: 4.0000000
+Temperature: 2.1000000
+Lattice: 100x100
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1087572932 of 10000000000 spin flips were accepted
+Temperature:               2.1000000
+<E> per spin:             -1.6609734
+Variance E per spin:   0.00052537638
+Heat capacity:         0.00011913297
+<M> per spin:             0.42963390
+variance M per spin:    0.0049281508
+Susceptibility:         0.0023467385
+<|M|> per spin:           0.86128559
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1118181661 of 10000000000 spin flips were accepted
+Temperature:               2.1100000
+<E> per spin:             -1.6524447
+Variance E per spin:   0.00043171579
+Heat capacity:         9.6969023e-05
+<M> per spin:             0.43155482
+variance M per spin:   0.00021921904
+Susceptibility:        0.00010389528
+<|M|> per spin:           0.86323794
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1154403896 of 10000000000 spin flips were accepted
+Temperature:               2.1200000
+<E> per spin:             -1.6423432
+Variance E per spin:   0.00045335272
+Heat capacity:         0.00010087058
+<M> per spin:             0.42839471
+variance M per spin:   0.00025823287
+Susceptibility:        0.00012180796
+<|M|> per spin:           0.85704017
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1192067092 of 10000000000 spin flips were accepted
+Temperature:               2.1300000
+<E> per spin:             -1.6318774
+Variance E per spin:   0.00047412669
+Heat capacity:         0.00010450455
+<M> per spin:             0.42526463
+variance M per spin:   0.00029082067
+Susceptibility:        0.00013653553
+<|M|> per spin:           0.85051424
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1231263019 of 10000000000 spin flips were accepted
+Temperature:               2.1400000
+<E> per spin:             -1.6210078
+Variance E per spin:   0.00048949174
+Heat capacity:         0.00010688526
+<M> per spin:             0.42199967
+variance M per spin:   0.00032999236
+Susceptibility:        0.00015420204
+<|M|> per spin:           0.84344763
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1271907034 of 10000000000 spin flips were accepted
+Temperature:               2.1500000
+<E> per spin:             -1.6098005
+Variance E per spin:   0.00051496675
+Heat capacity:         0.00011140438
+<M> per spin:             0.41793452
+variance M per spin:   0.00038345990
+Susceptibility:        0.00017835344
+<|M|> per spin:           0.83580836
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1313599973 of 10000000000 spin flips were accepted
+Temperature:               2.1600000
+<E> per spin:             -1.5983528
+Variance E per spin:   0.00054197130
+Heat capacity:         0.00011616326
+<M> per spin:             0.41389838
+variance M per spin:   0.00045115237
+Susceptibility:        0.00020886684
+<|M|> per spin:           0.82788724
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1358163589 of 10000000000 spin flips were accepted
+Temperature:               2.1700000
+<E> per spin:             -1.5861278
+Variance E per spin:   0.00057351956
+Heat capacity:         0.00012179481
+<M> per spin:             0.40959464
+variance M per spin:   0.00055744899
+Susceptibility:        0.00025688894
+<|M|> per spin:           0.81852521
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1404439245 of 10000000000 spin flips were accepted
+Temperature:               2.1800000
+<E> per spin:             -1.5734862
+Variance E per spin:   0.00059868490
+Heat capacity:         0.00012597528
+<M> per spin:             0.40423177
+variance M per spin:   0.00065216750
+Susceptibility:        0.00029915941
+<|M|> per spin:           0.80857401
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1453281583 of 10000000000 spin flips were accepted
+Temperature:               2.1900000
+<E> per spin:             -1.5601574
+Variance E per spin:   0.00063802602
+Heat capacity:         0.00013303018
+<M> per spin:             0.39851647
+variance M per spin:   0.00084260739
+Susceptibility:        0.00038475223
+<|M|> per spin:           0.79708663
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1504085882 of 10000000000 spin flips were accepted
+Temperature:               2.2000000
+<E> per spin:             -1.5463370
+Variance E per spin:   0.00067710931
+Heat capacity:         0.00013989862
+<M> per spin:             0.39187209
+variance M per spin:    0.0010701706
+Susceptibility:        0.00048644116
+<|M|> per spin:           0.78459271
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1554910604 of 10000000000 spin flips were accepted
+Temperature:               2.2100000
+<E> per spin:             -1.5326129
+Variance E per spin:   0.00070941109
+Heat capacity:         0.00014524909
+<M> per spin:             0.38714221
+variance M per spin:    0.0012419073
+Susceptibility:        0.00056194900
+<|M|> per spin:           0.77209498
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1613034096 of 10000000000 spin flips were accepted
+Temperature:               2.2200000
+<E> per spin:             -1.5168998
+Variance E per spin:   0.00075975987
+Heat capacity:         0.00015415954
+<M> per spin:             0.37797465
+variance M per spin:    0.0017566169
+Susceptibility:        0.00079126889
+<|M|> per spin:           0.75486804
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1674685320 of 10000000000 spin flips were accepted
+Temperature:               2.2300000
+<E> per spin:             -1.5002816
+Variance E per spin:   0.00081977709
+Heat capacity:         0.00016484890
+<M> per spin:             0.36675624
+variance M per spin:    0.0025143646
+Susceptibility:         0.0011275178
+<|M|> per spin:           0.73416157
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1737672398 of 10000000000 spin flips were accepted
+Temperature:               2.2400000
+<E> per spin:             -1.4833805
+Variance E per spin:   0.00088722891
+Heat capacity:         0.00017682336
+<M> per spin:             0.35467158
+variance M per spin:    0.0035286222
+Susceptibility:         0.0015752778
+<|M|> per spin:           0.71162117
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1817022531 of 10000000000 spin flips were accepted
+Temperature:               2.2500000
+<E> per spin:             -1.4620443
+Variance E per spin:    0.0010428330
+Heat capacity:         0.00020599170
+<M> per spin:             0.17819082
+variance M per spin:     0.010954014
+Susceptibility:         0.0048684507
+<|M|> per spin:           0.66551048
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1898488560 of 10000000000 spin flips were accepted
+Temperature:               2.2600000
+<E> per spin:             -1.4401926
+Variance E per spin:    0.0011887794
+Heat capacity:         0.00023274716
+<M> per spin:             0.22332400
+variance M per spin:     0.017332589
+Susceptibility:         0.0076692873
+<|M|> per spin:           0.61521224
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+1980306131 of 10000000000 spin flips were accepted
+Temperature:               2.2700000
+<E> per spin:             -1.4183732
+Variance E per spin:    0.0012090385
+Heat capacity:         0.00023463264
+<M> per spin:             0.24548044
+variance M per spin:     0.022943815
+Susceptibility:          0.010107407
+<|M|> per spin:           0.56169535
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+2080048363 of 10000000000 spin flips were accepted
+Temperature:               2.2800000
+<E> per spin:             -1.3917307
+Variance E per spin:    0.0013012894
+Heat capacity:         0.00025032498
+<M> per spin:           -0.053307839
+variance M per spin:     0.033966905
+Susceptibility:          0.014897766
+<|M|> per spin:           0.46760163
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+2162753773 of 10000000000 spin flips were accepted
+Temperature:               2.2900000
+<E> per spin:             -1.3699122
+Variance E per spin:    0.0012345789
+Heat capacity:         0.00023542246
+<M> per spin:           -0.040895593
+variance M per spin:     0.034870647
+Susceptibility:          0.015227357
+<|M|> per spin:           0.40373184
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+2244422794 of 10000000000 spin flips were accepted
+Temperature:               2.3000000
+<E> per spin:             -1.3484527
+Variance E per spin:    0.0011083605
+Heat capacity:         0.00020951994
+<M> per spin:            0.049071423
+variance M per spin:     0.033325176
+Susceptibility:          0.014489207
+<|M|> per spin:           0.33612105
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+2319069431 of 10000000000 spin flips were accepted
+Temperature:               2.3100000
+<E> per spin:             -1.3289833
+Variance E per spin:    0.0010113625
+Heat capacity:         0.00018953216
+<M> per spin:            0.038496447
+variance M per spin:     0.028500928
+Susceptibility:          0.012338064
+<|M|> per spin:           0.28263352
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+2389880841 of 10000000000 spin flips were accepted
+Temperature:               2.3200000
+<E> per spin:             -1.3107086
+Variance E per spin:   0.00090240929
+Heat capacity:         0.00016765928
+<M> per spin:            0.021540780
+variance M per spin:     0.022423313
+Susceptibility:         0.0096652213
+<|M|> per spin:           0.22731057
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+2454031798 of 10000000000 spin flips were accepted
+Temperature:               2.3300000
+<E> per spin:             -1.2942605
+Variance E per spin:   0.00082457776
+Heat capacity:         0.00015188671
+<M> per spin:           -0.017689218
+variance M per spin:     0.017666514
+Susceptibility:         0.0075821948
+<|M|> per spin:           0.19773256
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+2511734892 of 10000000000 spin flips were accepted
+Temperature:               2.3400000
+<E> per spin:             -1.2796594
+Variance E per spin:   0.00077951108
+Heat capacity:         0.00014236085
+<M> per spin:           0.0013634716
+variance M per spin:     0.014399099
+Susceptibility:         0.0061534613
+<|M|> per spin:           0.17123461
+Process 3 finished with 100x100 lattice after 3743.63seconds
+Random start
+Starting energy: 244
+Starting magnetization: 36
+Temperature: 2.1
+Lattice: 140x140
+Process 1 finished with 100x100 lattice after 3749.25seconds
+Random start
+Starting energy: -156
+Starting magnetization: -10
+Temperature: 2.1
+Lattice: 140x140
+Process 2 finished with 100x100 lattice after 3781.19seconds
+Random start
+Starting energy: 32
+Starting magnetization: -134
+Temperature: 2.1
+Lattice: 140x140
+Completed 1000000 Monte Carlo cycles with 10000 spins. 
+2566784871 of 10000000000 spin flips were accepted
+Temperature:               2.3500000
+<E> per spin:             -1.2658021
+Variance E per spin:   0.00074874319
+Heat capacity:         0.00013558048
+<M> per spin:           -0.020166625
+variance M per spin:     0.011810589
+Susceptibility:         0.0050257825
+<|M|> per spin:           0.15291829
+Process 0 finished with 100x100 lattice after 3752.1966seconds
+Random start
+Starting energy: -156.00000
+Starting magnetization: 210.00000
+Temperature: 2.1000000
+Lattice: 140x140
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2129544154 of 19600000000 spin flips were accepted
+Temperature:               2.1000000
+<E> per spin:             -1.6612966
+Variance E per spin:   0.00029760102
+Heat capacity:         6.7483224e-05
+<M> per spin:           0.0017023215
+variance M per spin:    0.0030596369
+Susceptibility:         0.0014569699
+<|M|> per spin:           0.86338348
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2192504386 of 19600000000 spin flips were accepted
+Temperature:               2.1100000
+<E> per spin:             -1.6523177
+Variance E per spin:   0.00021630435
+Heat capacity:         4.8584791e-05
+<M> per spin:          1.6400918e-05
+variance M per spin:   0.00011193055
+Susceptibility:        5.3047655e-05
+<|M|> per spin:           0.86309557
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2263447707 of 19600000000 spin flips were accepted
+Temperature:               2.1200000
+<E> per spin:             -1.6422197
+Variance E per spin:   0.00022552399
+Heat capacity:         5.0178888e-05
+<M> per spin:         -5.0807245e-05
+variance M per spin:   0.00012801371
+Susceptibility:        6.0383824e-05
+<|M|> per spin:           0.85694514
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2336673151 of 19600000000 spin flips were accepted
+Temperature:               2.1300000
+<E> per spin:             -1.6318575
+Variance E per spin:   0.00023436238
+Heat capacity:         5.1656941e-05
+<M> per spin:          0.00013201061
+variance M per spin:   0.00014615321
+Susceptibility:        6.8616528e-05
+<|M|> per spin:           0.85044996
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2413715887 of 19600000000 spin flips were accepted
+Temperature:               2.1400000
+<E> per spin:             -1.6209690
+Variance E per spin:   0.00024602119
+Heat capacity:         5.3721108e-05
+<M> per spin:          2.5770714e-05
+variance M per spin:   0.00016854142
+Susceptibility:        7.8757673e-05
+<|M|> per spin:           0.84336499
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2493073216 of 19600000000 spin flips were accepted
+Temperature:               2.1500000
+<E> per spin:             -1.6097784
+Variance E per spin:   0.00025907237
+Heat capacity:         5.6045942e-05
+<M> per spin:          4.9315306e-05
+variance M per spin:   0.00020233995
+Susceptibility:        9.4111602e-05
+<|M|> per spin:           0.83573364
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2575630893 of 19600000000 spin flips were accepted
+Temperature:               2.1600000
+<E> per spin:             -1.5982137
+Variance E per spin:   0.00027117576
+Heat capacity:         5.8122377e-05
+<M> per spin:          2.2591122e-05
+variance M per spin:   0.00022737093
+Susceptibility:        0.00010526432
+<|M|> per spin:           0.82762583
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2661263604 of 19600000000 spin flips were accepted
+Temperature:               2.1700000
+<E> per spin:             -1.5862394
+Variance E per spin:   0.00028569263
+Heat capacity:         6.0670779e-05
+<M> per spin:         -0.00014218643
+variance M per spin:   0.00027170162
+Susceptibility:        0.00012520812
+<|M|> per spin:           0.81880190
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2752491308 of 19600000000 spin flips were accepted
+Temperature:               2.1800000
+<E> per spin:             -1.5735157
+Variance E per spin:   0.00030100296
+Heat capacity:         6.3337043e-05
+<M> per spin:          0.00029083694
+variance M per spin:   0.00032218581
+Susceptibility:        0.00014779166
+<|M|> per spin:           0.80875532
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2848924422 of 19600000000 spin flips were accepted
+Temperature:               2.1900000
+<E> per spin:             -1.5601038
+Variance E per spin:   0.00032055191
+Heat capacity:         6.6835953e-05
+<M> per spin:          0.00048809694
+variance M per spin:   0.00043105415
+Susceptibility:        0.00019682838
+<|M|> per spin:           0.79687327
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+2946008677 of 19600000000 spin flips were accepted
+Temperature:               2.2000000
+<E> per spin:             -1.5466520
+Variance E per spin:   0.00034103769
+Heat capacity:         7.0462332e-05
+<M> per spin:         -0.00056043480
+variance M per spin:   0.00053691520
+Susceptibility:        0.00024405236
+<|M|> per spin:           0.78515699
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+3053026980 of 19600000000 spin flips were accepted
+Temperature:               2.2100000
+<E> per spin:             -1.5318482
+Variance E per spin:   0.00036466339
+Heat capacity:         7.4663375e-05
+<M> per spin:          0.00021974347
+variance M per spin:   0.00069369081
+Susceptibility:        0.00031388724
+<|M|> per spin:           0.77039106
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+3162802506 of 19600000000 spin flips were accepted
+Temperature:               2.2200000
+<E> per spin:             -1.5167331
+Variance E per spin:   0.00038673600
+Heat capacity:         7.8470903e-05
+<M> per spin:          -0.0015774057
+variance M per spin:   0.00090040258
+Susceptibility:        0.00040558675
+<|M|> per spin:           0.75408636
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+3285700052 of 19600000000 spin flips were accepted
+Temperature:               2.2300000
+<E> per spin:             -1.4998054
+Variance E per spin:   0.00042303636
+Heat capacity:         8.5068343e-05
+<M> per spin:         -0.00088066837
+variance M per spin:    0.0014905815
+Susceptibility:        0.00066842220
+<|M|> per spin:           0.73179787
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+3409716961 of 19600000000 spin flips were accepted
+Temperature:               2.2400000
+<E> per spin:             -1.4828481
+Variance E per spin:   0.00045842509
+Heat capacity:         9.1363418e-05
+<M> per spin:          0.00092196888
+variance M per spin:    0.0021199404
+Susceptibility:        0.00094640198
+<|M|> per spin:           0.70908002
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+3555901357 of 19600000000 spin flips were accepted
+Temperature:               2.2500000
+<E> per spin:             -1.4628182
+Variance E per spin:   0.00054343248
+Heat capacity:         0.00010734469
+<M> per spin:           -0.018529320
+variance M per spin:    0.0084723512
+Susceptibility:         0.0037654894
+<|M|> per spin:           0.66662405
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+3706056265 of 19600000000 spin flips were accepted
+Temperature:               2.2600000
+<E> per spin:             -1.4423243
+Variance E per spin:   0.00056280650
+Heat capacity:         0.00011019001
+<M> per spin:             0.27549687
+variance M per spin:    0.0070733345
+Susceptibility:         0.0031297940
+<|M|> per spin:           0.63114425
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+3884126844 of 19600000000 spin flips were accepted
+Temperature:               2.2700000
+<E> per spin:             -1.4179932
+Variance E per spin:   0.00066334227
+Heat capacity:         0.00012873183
+<M> per spin:            0.054018618
+variance M per spin:     0.016639268
+Susceptibility:         0.0073300742
+<|M|> per spin:           0.55266937
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+4098424453 of 19600000000 spin flips were accepted
+Temperature:               2.2800000
+<E> per spin:             -1.3887310
+Variance E per spin:   0.00068088773
+Heat capacity:         0.00013098025
+<M> per spin:            -0.10039960
+variance M per spin:     0.032929324
+Susceptibility:          0.014442686
+<|M|> per spin:           0.41127260
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+4266575214 of 19600000000 spin flips were accepted
+Temperature:               2.2900000
+<E> per spin:             -1.3660526
+Variance E per spin:   0.00059029068
+Heat capacity:         0.00011256282
+<M> per spin:           -0.074921364
+variance M per spin:     0.029001532
+Susceptibility:          0.012664424
+<|M|> per spin:           0.32550370
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+129158375 of 19600000000 spin flips were accepted
+Temperature:               2.3000000
+<E> per spin:             -1.3449675
+Variance E per spin:   0.00054060081
+Heat capacity:         0.00010219297
+<M> per spin:            0.021308080
+variance M per spin:     0.025799831
+Susceptibility:          0.011217318
+<|M|> per spin:           0.25362853
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+267536264 of 19600000000 spin flips were accepted
+Temperature:               2.3100000
+<E> per spin:             -1.3266434
+Variance E per spin:   0.00048385514
+Heat capacity:         9.0675801e-05
+<M> per spin:          -0.0024315531
+variance M per spin:     0.019337179
+Susceptibility:         0.0083710731
+<|M|> per spin:           0.20088639
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+399966839 of 19600000000 spin flips were accepted
+Temperature:               2.3200000
+<E> per spin:             -1.3091937
+Variance E per spin:   0.00043122314
+Heat capacity:         8.0117260e-05
+<M> per spin:           0.0081253595
+variance M per spin:     0.012485035
+Susceptibility:         0.0053814807
+<|M|> per spin:           0.16205246
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+521384761 of 19600000000 spin flips were accepted
+Temperature:               2.3300000
+<E> per spin:             -1.2933786
+Variance E per spin:   0.00040339188
+Heat capacity:         7.4304534e-05
+<M> per spin:           0.0068140232
+variance M per spin:    0.0092560343
+Susceptibility:         0.0039725469
+<|M|> per spin:           0.13396185
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+628669953 of 19600000000 spin flips were accepted
+Temperature:               2.3400000
+<E> per spin:             -1.2795595
+Variance E per spin:   0.00038622140
+Heat capacity:         7.0534991e-05
+<M> per spin:           -0.013356475
+variance M per spin:    0.0080362545
+Susceptibility:         0.0034342968
+<|M|> per spin:           0.12431459
+Process 3 finished with 140x140 lattice after 7409.94seconds
+Process 1 finished with 140x140 lattice after 7422.21seconds
+Process 2 finished with 140x140 lattice after 7435.3seconds
+Completed 1000000 Monte Carlo cycles with 19600 spins. 
+738758660 of 19600000000 spin flips were accepted
+Temperature:               2.3500000
+<E> per spin:             -1.2654207
+Variance E per spin:   0.00037318951
+Heat capacity:         6.7576190e-05
+<M> per spin:          -0.0026988380
+variance M per spin:    0.0061719093
+Susceptibility:         0.0026263444
+<|M|> per spin:           0.10558984
+Process 0 finished with 140x140 lattice after 7426.2900seconds

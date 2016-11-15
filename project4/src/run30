@@ -1,0 +1,8 @@
+echo '-O3 flag and 4 processes' > ../output/screendump_timing
+mpirun -n 4 project4 30 1000000 2.2 alkjf >> ../output/screendump_timing
+echo ' ' >> ../output/screendump_timing
+echo '-O3 flag and 1 process' >> ../output/screendump_timing
+./project4 30 1000000 2.2 alkjf >> ../output/screendump_timing
+echo ' ' >> ../output/screendump_timing
+echo 'no flags and 1 process ' >> ../output/screendump_timing
+./project4_no_opt 30 1000000 2.2 alkjf >> ../output/screendump_timing
