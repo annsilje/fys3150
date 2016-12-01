@@ -38,31 +38,37 @@ void Simulation::run(mt19937_64& generator){
         int b = pick_agent(generator);
         double epsilon = pick_amount(generator);
         
-        double delta_m = fabs(m_money[a] - m_money[b]);
+        double diff_m = fabs(m_money[a] - m_money[b]);
         double probability;
-        if (delta_m < 1 || is_close(m_alpha, 0)) {
+        if (diff_m < 1 || is_close(m_alpha, 0)) {
             probability = 1;
         }
         else if(is_close(m_gamma, 0)){
-            probability = pow(delta_m, -m_alpha);
+            probability = pow(diff_m, -m_alpha);
         } 
         else{
             int c = m_interactions[a][b];
-            probability = pow(delta_m, -m_alpha)*pow(c + 1, m_gamma);
+            probability = pow(diff_m, -m_alpha)*pow(c + 1, m_gamma);
         }
         
         double interaction = pick_interaction(generator);        
         //double probability = pow(fabs(m_money[a] - m_money[b]), -m_alpha)*pow(c + 1, m_gamma);
         //if (probability > interaction || is_close(m_money[a], m_money[b]) || is_close(m_alpha, 0)){
-        if(probability > interaction){
-            double total_money = m_money[a] + m_money[b];
-            m_money[a] = m_savings*m_money[a] + epsilon * (1 - m_savings) * total_money;
-            m_money[b] = m_savings*m_money[b] + (1 - epsilon) * (1 - m_savings) * total_money;
+        if(probability >= interaction){
+            double delta_m = (1 - m_savings)*(epsilon*m_money[b] - (1 - epsilon)*m_money[a]);
+            m_money[a] = m_money[a] + delta_m;
+            m_money[b] = m_money[b] - delta_m;
+            
             m_interactions[a][b]++;
             m_interactions[b][a]++;
         }
         
     }
+//    double money_sum;
+//    for(int i=0; i<m_agents;i++){
+//        money_sum += m_money[i];
+//    }
+//    cout << "Total money after one simulation run " << money_sum << endl;
 }
 
 /*

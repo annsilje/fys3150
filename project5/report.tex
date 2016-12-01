@@ -1,46 +1,160 @@
 \documentclass{article}
 
 \usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
 \usepackage{appendix}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage[section]{placeins}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{enumitem}
+
+\setlist{nosep}
 
 \begin{document}
 
-\title{Project 1 \\ FYS3150}
+\title{\vspace{1cm}Project 5 \\ FYS3150}
 
-\author{Ann-Silje Kirkvik}
-\date{\today}
+\author{\vspace{1cm}Ann-Silje Kirkvik \\ github.com/annsilje/fys3150}
+\date{\vspace{5cm}\today}
 
 \maketitle
 
 \newpage
 
-%describe problem (short)
+\begin{abstract}
+
+\end{abstract}
+
+\vspace{1cm}
+
+
 \section{Introduction}
+This project simulates financial transactions in a closed environment to study the final distribution of money. The environment consists of a constant number of people or financial agents and the total money in the system is also constant. No money is destroyed or created in a financial transaction. The financial transactions are simulated using Monte Carlo methods and several different transaction models are tested. Section \ref{sec:description} describes the theoretical background of the project and the implementation. Section \ref{sec:results} shows the results of the numerical experiments and section \ref{sec:conclusions} has some final remarks.
 
-
-%\begin{figure}[h]
-%    \includegraphics[width=\linewidth]{mars_lander.pdf}
-%    \caption{Mars and Beagle 2 initial condition}
-%    \label{fig:pic1}
-%\end{figure}
-
-%describe theory
 \section{Description}
+\label{sec:description}
+This project simulates financial transactions in a closed environment to study the final distribution of money. The system consists of a fixed number of agents that perform financial transactions. All the agents start with the same amount of money. Money is neither destroyed or created in the transactions, and is therefore a conserved quantity. A transaction consists of two agents exchanging money, and different models are applied to determine which agents interact and how much money is exchanged. The simulation is implemented using Monte Carlo methods and the basic algorithm is as follows:
 
-%describe how the theory was applied to solve the problem (short)
-\section{Solution}
+\begin{framed}
+\begin{itemize}
+\item[-] \texttt{For each Monte Carlo cycle:}
+\begin{itemize}
+\item[-] \texttt{Initialize the agents' starting money}
+\item[-] \texttt{For each transaction:}
+\begin{itemize}
+\item[-] \texttt{Select a two random agents} 
+\item[-] \texttt{If agents want to interact:}
+\begin{itemize}
+\item[-] \texttt{Determine the amount of money to transfer}
+\item[-] \texttt{Transfer money between agents}
+\end{itemize}
+\end{itemize}
+\item[-] \texttt{Update the distribution of money}
+\end{itemize}
+\end{itemize}
+\end{framed} 
 
-%describe implementation
-\subsection{Algorithm}
+\subsection{Exchange models}
+\label{subsec:exchange}
 
-%describe results and test cases 
-\subsection{Results}
+When two agents $a$ and $b$ perform a financial transaction the total money is conserved. This can be expressed as
 
-%evaluate results, stability, precision
+\begin{equation}
+m_a + m_b = m'_a + m'_b 
+\end{equation} 
+
+\noindent where $m_a$ and $m_b$ is the amount of money of agent $a$ and $b$, respectively, before the transaction is performed. The primed variables represent the amount of money after the transaction is performed. Two different models for how money is exchanged is tested in this project and these models are taken from \cite{gibbs}.
+
+\subsubsection{Without savings}
+\label{subsec:without_save}
+A simple model for the amount of money to exchange is that one agent transfers a random amount to the other agent. Mathematically, this can be expressed as:
+
+\begin{flalign}
+m'_a &= \epsilon(m_a + m_b) \\
+m'_b &= (1 - \epsilon)(m_a + m_b)
+\end{flalign}
+
+\noindent where $\epsilon\in[0,1]$ is a uniformly distributed random number. As mentioned in \cite{gibbs} this model yields an exponential equilibrium distribution, also called a Gibbs distribution expressed as:
+
+\begin{equation}
+p(m) = \beta e^{-\beta m}
+\end{equation}
+
+\noindent where $\beta = 1/\langle m \rangle$. $\langle m \rangle$ is the average money is the system and is given by $\langle m \rangle = \Sigma_i m_i/N$ and $N$ is the total number of agents. 
+
+
+\subsubsection{With savings}
+\label{subsec:with_save}
+A slightly more complicated model allows agents to keep a part of their money out of the transaction, which simulates agents saving some of their money. This can be expressed as
+
+\begin{flalign}
+m'_a &= \lambda m_a + \epsilon(1 - \lambda)(m_a + m_b) \\
+m'_b &= \lambda m_b + (1 - \epsilon)(1 - \lambda)(m_a + m_b) 
+\end{flalign} 
+
+\noindent where $\lambda\in[0,1]$ is the amount of money the agents save. When $\lambda=0$ this model is reduced to the model in section \ref{subsec:without_save}. \cite{gibbs} shows that this model yields a gamma distribution when equilibrium is reached. The gamma distribution is given by
+
+\begin{equation}
+p_{n}(x_n) = \frac{x_n^{n-1}e^{-x_n}}{\Gamma(n)}
+\end{equation}
+
+\noindent where $\Gamma(n)$ is the Gamma function, $x_n=xn$ and 
+
+\begin{equation}
+n = 1 + \frac{3\lambda}{1 - \lambda} \quad \text{ and } \quad x = \frac{m}{\langle m \rangle}
+\end{equation}
+
+
+\subsection{Interaction models}
+\label{subsec:interact}
+
+In the models in sections \ref{subsec:without_save} and \ref{subsec:with_save} all agents have the same probability of interacting with each other. \cite{interaction} suggests several models to simulate more complicated preferences on which agents interact. Two of these models will be studied here. 
+
+\subsubsection{Nearest neighbors}
+\label{subsec:neighbors}
+
+The first model tries to simulate the fact that agents that are financially close are more likely to interact. Meaning, the difference in money between two agents determines the probability of these to agents performing a transaction. The probability of a transaction occuring is given by
+
+\begin{equation}
+p_{ab} \propto |m_a - m_b|^{-\alpha}
+\end{equation}
+
+\noindent where $\alpha > 0$ is a model parameter that can be adjusted to affect the probability of interacting. A higher value of $\alpha$ will lower the probability of interaction. For $\alpha=0$ the model reduces to the basic model where all agents are equally likely to interact. When $m_a = m_b$ the interaction is defined to have a probability of 1. This project simplifies the model further by defining
+
+\begin{equation}
+p_{ab} = 
+\begin{cases}
+|m_a - m_b|^{-\alpha} &   \quad      \text{if } |m_a - m_b| > 1     \\
+1                     &   \quad      \text{otherwise }  \\
+\end{cases}
+\end{equation}
+
+\subsubsection{Nearest neighbors and former transactions}
+\label{subsec:former}
+
+
+\FloatBarrier
+\section{Results}
+\label{sec:results}
+
+\FloatBarrier
 \section{Conclusions}
+\label{sec:conclusions}
 
+\clearpage
 
-
+\begin{thebibliography}{1}
+\bibitem{lectures} Hjort-Jensen, M., 2015. Computational physics. Available at https://github.com/CompPhysics/ComputationalPhysics/
+\bibitem{gibbs} Marco Patriarca, Anirban Chakraborti, Kimmo Kaski, Gibbs versus non-Gibbs distributions in money dynamics, Physica A: Statistical Mechanics and its Applications, Volume 340, Issues 1–3, 1 September 2004, Pages 334-339, ISSN 0378-4371, http://dx.doi.org/10.1016/j.physa.2004.04.024.
+\bibitem{interaction} Sanchari Goswami, Parongama Sen, Agent based models for wealth distribution with preference in interaction, Physica A: Statistical Mechanics and its Applications, Volume 415, 1 December 2014, Pages 514-524, ISSN 0378-4371, http://dx.doi.org/10.1016/j.physa.2014.08.018.
+%\bibitem{physics} Young, Freedman, Sears and Zemansky's University Physics with Modern Physics, 11th edition, Addison-Wesley, 2004  
+%\bibitem{onsager} Onsager, Lars, Phys. Rev., \textbf{65}, 117--149, (1944)
+\end{thebibliography}
 
 
 

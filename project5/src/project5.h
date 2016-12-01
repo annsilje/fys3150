@@ -7,7 +7,7 @@
 #include <cmath>
 #include "lib.h"
 
-inline bool is_close(float a, float b){
+inline bool is_close(double a, double b){
     return fabs(a - b) < 1e-8;
 }
 
