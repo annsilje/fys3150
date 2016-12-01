@@ -43,7 +43,7 @@ private:
     double m_bin_width;
     int m_bins;
     
-    int* m_acc_bins; 
+    long* m_acc_bins; 
     
     std::string m_pdf_file;
     std::ofstream m_exp_file;

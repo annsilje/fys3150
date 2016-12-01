@@ -81,7 +81,7 @@ Experiment::Experiment(int cycles, int agents, double savings, double alpha, dou
     m_cycles(cycles), m_start_money(1.0), m_agents(agents), m_savings(savings), m_alpha(alpha), m_gamma(gamma), m_bin_width(0.05){
     
     m_bins = (int) m_start_money*m_agents/m_bin_width;
-    m_acc_bins = new int[m_bins]; 
+    m_acc_bins = new long[m_bins]; 
     
     for(int i=0; i<m_bins;i++) m_acc_bins[i] = 0;
     
@@ -111,7 +111,7 @@ void Experiment::write(){
     hist_file << setiosflags(ios::showpoint);
     for (int i=0; i<m_bins; i++){
         hist_file << setw(15) << setprecision(8) << i*m_bin_width << " ";
-        hist_file << setw(15) << setprecision(8) << m_acc_bins[i]/m_cycles << endl;
+        hist_file << setw(15) << setprecision(8) << m_acc_bins[i]/(double)m_cycles << endl;
     }
     hist_file.close();
 }
@@ -127,9 +127,9 @@ void Experiment::write_expectation_values(int cycle){
         sigma += m2*pdf;
         mu += m*pdf;
     }
-    sigma = sigma/m_bins - pow((mu/m_bins),2);
+    sigma = sigma/(double)m_bins - pow((mu/(double)m_bins),2);
 
-    m_exp_file << setw(5) << cycle << " " << setw(10) << mu/m_bins << " " << setw(10) << sigma << endl;
+    m_exp_file << setw(5) << cycle << " " << setw(10) << mu/(double)m_bins << " " << setw(10) << sigma << endl;
 }
 
 
