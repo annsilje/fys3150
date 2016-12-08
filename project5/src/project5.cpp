@@ -14,17 +14,19 @@ Simulation::Simulation(double savings, double start_money, int agents, double al
     m_agents(agents), m_transactions(10000000), m_savings(savings), m_alpha(alpha), m_gamma(gamma){
     
     m_money = new double[m_agents];
-    m_interactions = (int**) matrix(m_agents, m_agents, sizeof(int));
+    m_c = (int**) matrix(m_agents, m_agents, sizeof(int));
+    m_interactions = 0;
+    m_max_interactions = 0;
     for(int i=0; i<m_agents; i++){
         m_money[i] = start_money;
-        for(int j=0; j<m_agents;j++) m_interactions[i][j] = 0; 
+        for(int j=0; j<m_agents;j++) m_c[i][j] = 0; 
     }       
 }
 
 
 Simulation::~Simulation(){
     delete [] m_money;
-    free_matrix((void**) m_interactions);
+    free_matrix((void**) m_c);
 }
 
 
@@ -47,28 +49,28 @@ void Simulation::run(mt19937_64& generator){
             probability = pow(diff_m, -m_alpha);
         } 
         else{
-            int c = m_interactions[a][b];
-            probability = pow(diff_m, -m_alpha)*pow(c + 1, m_gamma);
+            probability = pow(diff_m, -m_alpha)*pow(m_c[a][b] + 1, m_gamma);
         }
         
         double interaction = pick_interaction(generator);        
-        //double probability = pow(fabs(m_money[a] - m_money[b]), -m_alpha)*pow(c + 1, m_gamma);
-        //if (probability > interaction || is_close(m_money[a], m_money[b]) || is_close(m_alpha, 0)){
+
         if(probability >= interaction){
+
             double delta_m = (1 - m_savings)*(epsilon*m_money[b] - (1 - epsilon)*m_money[a]);
             m_money[a] = m_money[a] + delta_m;
             m_money[b] = m_money[b] - delta_m;
             
-            m_interactions[a][b]++;
-            m_interactions[b][a]++;
+            
+            m_c[a][b] = m_c[a][b] + 1;
+            m_c[b][a] = m_c[a][b];
+            
+            //Bookkeeping
+            if(m_max_interactions < m_c[a][b]) m_max_interactions = m_c[a][b];
+            m_interactions++;
         }
         
     }
-//    double money_sum;
-//    for(int i=0; i<m_agents;i++){
-//        money_sum += m_money[i];
-//    }
-//    cout << "Total money after one simulation run " << money_sum << endl;
+
 }
 
 /*
@@ -92,9 +94,10 @@ Experiment::Experiment(int cycles, int agents, double savings, double alpha, dou
     
     stringstream ss2;
     ss2 << setiosflags(ios::showpoint) << fixed << setprecision(2);
-    ss2 << "../output/expectation_values_savings_" << savings << "_alpha_" << alpha << "_gamma_" << gamma << "_agents_" << agents << ".txt";
+    ss2 << "../output/cycle_data_savings_" << savings << "_alpha_" << alpha << "_gamma_" << gamma << "_agents_" << agents << ".txt";
     m_exp_file.open(ss2.str().c_str());
     m_exp_file << setiosflags(ios::showpoint) << fixed << setprecision(8);
+    m_exp_file << setw(6) << "#cycle" << setw(10) << "mu" << setw(11) << "sigma" << setw(9) << "transactions" << setw(9) << "max interactions" << endl;
 }
 
 
@@ -104,7 +107,7 @@ Experiment::~Experiment(){
 }
 
 
-void Experiment::write(){
+void Experiment::write_pdf(){
     ofstream hist_file;
     hist_file.open(m_pdf_file.c_str());
     
@@ -117,9 +120,10 @@ void Experiment::write(){
 }
 
 
-void Experiment::write_expectation_values(int cycle){
+void Experiment::write_cycle_data(Simulation& simulation, int cycle){
     double sigma = 0;
     double mu = 0;
+    
     for(int i=0; i<m_bins; i++){
         double m = (i+0.5)*m_bin_width;
         double m2 = m*m;
@@ -127,9 +131,10 @@ void Experiment::write_expectation_values(int cycle){
         sigma += m2*pdf;
         mu += m*pdf;
     }
-    sigma = sigma/(double)m_bins - pow((mu/(double)m_bins),2);
 
-    m_exp_file << setw(5) << cycle << " " << setw(10) << mu/(double)m_bins << " " << setw(10) << sigma << endl;
+    sigma = sigma - mu*mu;
+    m_exp_file << setw(5) << cycle << " " << setw(10) << mu << " " << setw(10) << sigma << " ";
+    m_exp_file << setw(8) << simulation.get_interactions() << " " << setw(8) << simulation.get_max_interactions() << endl;
 }
 
 
@@ -140,7 +145,7 @@ void Experiment::accumulate_bins(Simulation& simulation, int cycle){
         m_acc_bins[bin]++;
     }
     if(cycle > 1 && cycle % 10 == 0){
-        write_expectation_values(cycle);
+        write_cycle_data(simulation, cycle);
     }
 }
 
@@ -188,7 +193,7 @@ int main(int argc, char** argv){
     experiment.run(generator);
     
     //Save distribution
-    experiment.write();
+    experiment.write_pdf();
 
     cout << "Finished after " << (clock() - start)/(double) CLOCKS_PER_SEC << "seconds" << endl; 
     

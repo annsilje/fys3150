@@ -27,14 +27,25 @@
 \newpage
 
 \begin{abstract}
+This project simulates financial transactions in a closed environment to study the distribution of wealth. The environment consists of a constant number of financial agents and the total money in the system is also constant. Various models for transactions and interactions are applied to try to reproduce the famous Pareto distribution in the high end tail of the wealth distribution. The simulations are implemented using Monte Carlo methods. Two transactions models are implemented based on \cite{gibbs}. The first model allows the agents to transfer a random amount of money and the simulation converges to the Gibbs distribution. The second model allows agents to save a part of their money and the equilibrium distribution of the simulations becomes a Gamma distribution.
 
+Two interaction models, based on \cite{interaction}, are also tested. The first model prefers transactions between agents that are financially close and the second model also prefers transactions between agents that have a transaction history. The preference on financial closeness cause the distribution to be more Pareto-like with a large amount of poor agents and a few very rich agents. The preference on transaction history dampens the effects of the financial closeness. Combining the two interaction models with the savings reveals some weaknesses in the designs and normalization of the interaction models. The interaction models would benefit from better parametrization and normalization.
 \end{abstract}
 
 \vspace{1cm}
 
 
 \section{Introduction}
-This project simulates financial transactions in a closed environment to study the final distribution of money. The environment consists of a constant number of people or financial agents and the total money in the system is also constant. No money is destroyed or created in a financial transaction. The financial transactions are simulated using Monte Carlo methods and several different transaction models are tested. Section \ref{sec:description} describes the theoretical background of the project and the implementation. Section \ref{sec:results} shows the results of the numerical experiments and section \ref{sec:conclusions} has some final remarks.
+The Italian scientist Vildredo Pareto (\cite{pareto}) is known for the famous 80/20 rule, where 80\% of the events come from 20\% of the causes. This rule of thumb is approximated mathematically by a power law distribution known as the Pareto distribution. In economics, this distribution is often observed in the high end tail of the distribution of wealth. The tail of the wealth distribution, $w(m)$, can be described by
+
+\begin{equation}
+w(m) \propto m^{-1-\nu}
+\label{eq:pareto}
+\end{equation}
+
+\noindent where $\nu$ is the Pareto exponent and is typically in the range $\nu \in [1,3]$ according to \cite{interaction}. $m$ is the amount of money a person possesses. 
+
+This project simulates financial transactions in a closed environment to study the distribution of wealth and tries to reproduce the Pareto tail. The environment consists of a constant number of financial agents and the total money in the system is also constant. Meaning, no money is destroyed or created in a financial transaction. The financial transactions are simulated using Monte Carlo methods and several different transaction and interaction models are tested. This project will try to combine the transaction models in \cite{gibbs} with some of the interaction models in \cite{interaction}. Section \ref{sec:description} describes the theoretical background of the project and the implementation. Section \ref{sec:results} shows the results of the numerical experiments and section \ref{sec:conclusions} has some final remarks.
 
 \section{Description}
 \label{sec:description}
@@ -70,7 +81,7 @@ m_a + m_b = m'_a + m'_b
 
 \noindent where $m_a$ and $m_b$ is the amount of money of agent $a$ and $b$, respectively, before the transaction is performed. The primed variables represent the amount of money after the transaction is performed. Two different models for how money is exchanged is tested in this project and these models are taken from \cite{gibbs}.
 
-\subsubsection{Without savings}
+\subsubsection{Basic model}
 \label{subsec:without_save}
 A simple model for the amount of money to exchange is that one agent transfers a random amount to the other agent. Mathematically, this can be expressed as:
 
@@ -79,16 +90,17 @@ m'_a &= \epsilon(m_a + m_b) \\
 m'_b &= (1 - \epsilon)(m_a + m_b)
 \end{flalign}
 
-\noindent where $\epsilon\in[0,1]$ is a uniformly distributed random number. As mentioned in \cite{gibbs} this model yields an exponential equilibrium distribution, also called a Gibbs distribution expressed as:
+\noindent where $\epsilon\in[0,1]$ is a uniformly distributed random number. As time progresses (or transactions are performed) the distribution of wealth reaches a steady state. As mentioned in \cite{gibbs}, this model yields an exponential equilibrium distribution, also called a Gibbs distribution. The Gibbs distribution is expressed as:
 
 \begin{equation}
 p(m) = \beta e^{-\beta m}
+\label{eq:gibbs}
 \end{equation}
 
-\noindent where $\beta = 1/\langle m \rangle$. $\langle m \rangle$ is the average money is the system and is given by $\langle m \rangle = \Sigma_i m_i/N$ and $N$ is the total number of agents. 
+\noindent where $\beta = 1/m_0$. $m_0$ is the average money in the system and is given by $m_0 = \Sigma_i m_i/N$ and $N$ is the total number of agents. 
 
 
-\subsubsection{With savings}
+\subsubsection{Model with savings}
 \label{subsec:with_save}
 A slightly more complicated model allows agents to keep a part of their money out of the transaction, which simulates agents saving some of their money. This can be expressed as
 
@@ -106,25 +118,26 @@ p_{n}(x_n) = \frac{x_n^{n-1}e^{-x_n}}{\Gamma(n)}
 \noindent where $\Gamma(n)$ is the Gamma function, $x_n=xn$ and 
 
 \begin{equation}
-n = 1 + \frac{3\lambda}{1 - \lambda} \quad \text{ and } \quad x = \frac{m}{\langle m \rangle}
+n = 1 + \frac{3\lambda}{1 - \lambda} \quad \text{ and } \quad x = \frac{m}{m_0}
 \end{equation}
 
 
 \subsection{Interaction models}
 \label{subsec:interact}
 
-In the models in sections \ref{subsec:without_save} and \ref{subsec:with_save} all agents have the same probability of interacting with each other. \cite{interaction} suggests several models to simulate more complicated preferences on which agents interact. Two of these models will be studied here. 
+In the models in sections \ref{subsec:without_save} and \ref{subsec:with_save} all agents have the same probability of interacting with each other. \cite{interaction} suggests several models to simulate more complicated preferences on whom to interact with. Two of these models will be studied here. 
 
 \subsubsection{Nearest neighbors}
 \label{subsec:neighbors}
 
-The first model tries to simulate the fact that agents that are financially close are more likely to interact. Meaning, the difference in money between two agents determines the probability of these to agents performing a transaction. The probability of a transaction occuring is given by
+The first model tries to simulate the fact that agents that are financially close are more likely to interact. Meaning, the difference in money between two agents determines the probability of these two agents performing a transaction. The probability of a transaction occurring is given by
 
 \begin{equation}
 p_{ab} \propto |m_a - m_b|^{-\alpha}
+\label{eq:neighbor}
 \end{equation}
 
-\noindent where $\alpha > 0$ is a model parameter that can be adjusted to affect the probability of interacting. A higher value of $\alpha$ will lower the probability of interaction. For $\alpha=0$ the model reduces to the basic model where all agents are equally likely to interact. When $m_a = m_b$ the interaction is defined to have a probability of 1. This project simplifies the model further by defining
+\noindent where $\alpha > 0$ is a model parameter that can be adjusted to affect the probability of interacting. A higher value of $\alpha$ will lower the probability of interaction. For $\alpha=0$ the model reduces to the models where all agents are equally likely to interact. When $m_a = m_b$ the interaction is defined to have a probability of 1. \cite{interaction} does not explain how to normalize this probability. Therefore, this project applies a simple interpretation of equation \ref{eq:neighbor} to try and reproduce the results of \cite{interaction}. The model applied in this project then becomes 
 
 \begin{equation}
 p_{ab} = 
@@ -135,25 +148,240 @@ p_{ab} =
 \end{equation}
 
 \subsubsection{Nearest neighbors and former transactions}
-\label{subsec:former}
+\label{subsec:history}
+The second model is an extension of the former model. The extended model tries to simulate the fact that agents prefer to trade with agents they have traded with earlier by taking the history of former transaction into account. The probability of a transaction occurring is then given by
+
+\begin{equation}
+p_{ab} \propto |m_a - m_b|^{-\alpha}(c_{ab} + 1)^{\gamma}
+\end{equation}
+
+\noindent where $c_{ab}$ is the number of times agents $a$ and $b$ have traded and $\gamma$ is the model parameter. By increasing $\gamma$ transaction history will become more important. For $\gamma=0$ this model is reduced to the model in section \ref{subsec:neighbors}. Again, \cite{interaction} offers no explanation on how to normalize this probability, and the same simple interpretation as before is used. The model in this project then becomes
+
+\begin{equation}
+p_{ab} = 
+\begin{cases}
+|m_a - m_b|^{-\alpha}(c_{ab} + 1)^{\gamma} & \quad \text{if } |m_a - m_b| > 1 \\
+1                                          & \quad \text{otherwise } \\
+\end{cases}
+\end{equation}
 
 
 \FloatBarrier
 \section{Results}
 \label{sec:results}
+The source code for this project is located at http://github.com/annsilje/fys3150. For all the simulations the agents' starting money is set to 1. This implies that the total money in the system equals the number of agents $N$. Each Monte Carlo cycle attempts to perform $10^7$ transactions and each simulation consists of 2000 Monte Carlo cycles. 
+
+\subsection{Basic model}
+Starting with the basic transaction model from section \ref{subsec:without_save} and no interaction model the algorithm in section \ref{sec:description} is implemented. For each Monte Carlo cycle the wealth distribution is maintained in a histogram and the expectation value $\mu=\langle m \rangle$ and variance $\sigma_m^2$ is computed. The final distribution is shown in figure \ref{fig:gibbs} and the evolution of the corresponding  expectation value and variance is shown in figure \ref{fig:exp}. 
+
+For a Gibbs distribution, given in equation \ref{eq:gibbs}, the expectation value and variance is given by $\mu=1/\beta$ and $\sigma_m^2=1/\beta^2$, according to \cite{lectures}. With $m_0=1$, $\mu=1$ and $\sigma_m^2=1$. Figure \ref{fig:exp} shows that the distribution converges towards these values and that 2000 Monte Carlo cycles should be sufficient to approximate the steady state of the distribution. The expectation value converges very slowly towards 1 after reaching a reasonable approximation rather fast and a significant number of cycles is needed to get a better approximation of the steady state. The variance is more unstable. 2000 Monte Carlo cycles seem like a reasonable trade off between precision and computation time. Similar behavior is observed for the other models and with differing model parameters. 
+
+Computing the logarithm of base 10 of the Gibbs distribution with $\beta=1$ gives:
+
+\begin{equation}
+\log_{10}(e^{-m}) = \frac{\ln(e^{-m})}{\ln 10} = \frac{-m \ln e}{\ln 10} = \frac{-m}{\ln 10}
+\end{equation}
+
+As expected the logarithmic plot in figure \ref{fig:gibbs} is a straight line with a negative slope. For increasing money the distribution is a bit noisy due to relatively few agents in each bin, but the linear trend is still clear. 
+
+\begin{figure}
+\centering
+\subcaptionbox{\label{subfig:hist}}[0.48\linewidth]{%
+    \includegraphics[width=0.50\linewidth]{fig/{histogram_savings_0.00_alpha_0.00_gamma_0.00_agents_500}.pdf}
+}
+\subcaptionbox{\label{subfig:hist_log}}[0.48\linewidth]{%
+    \includegraphics[width=0.50\linewidth]{fig/{pdf_log_savings_0.00_alpha_0.00_gamma_0.00_agents_500}.pdf}
+}
+\caption{Equilibrium distribution of the basic transaction model with $N=500$. The bins are of size $\Delta m=0.05$. (a) shows the normalized histogram and (b) shows the corresponding logarithmic plot.}
+\label{fig:gibbs}
+\end{figure}
+
+\begin{figure}
+\subcaptionbox{\label{subfig:mu}}[0.48\linewidth]{%
+    \includegraphics[width=0.50\linewidth]{fig/{mu_savings_0.00_alpha_0.00_gamma_0.00_agents_500}.pdf}
+}
+\subcaptionbox{\label{subfig:sigma}}[0.48\linewidth]{%
+    \includegraphics[width=0.50\linewidth]{fig/{sigma_savings_0.00_alpha_0.00_gamma_0.00_agents_500}.pdf}   
+}
+\caption{Evolution of the expectation value $\mu$ and variance $\sigma_m^2$ for the basic transaction model. (a) shows the expectation value and (b) shows the variance. }
+\label{fig:exp}
+\end{figure}
+
+\FloatBarrier
+\subsection{Savings}
+\label{subsec:savings_results}
+By applying the model in section \ref{subsec:with_save} the distribution of wealth no longer follow the Gibbs distribution, but rather the Gamma distribution as mentioned in section \ref{subsec:with_save}. Figure \ref{fig:savings} shows the corresponding distribution for different amounts of savings. As $\lambda$ increases fewer agents end up with zero money and the maximum amount of money for one agent is decreased. The expectation value, or the most probable amount of money for an agent, increases towards $m_0$ for increasing $\lambda$. Of course, if $\lambda$ reaches 1 then no money would be transfered in the transactions and all the agents would be stuck with their starting money.
+
+\begin{figure}
+\centering
+\subcaptionbox{\label{subfig:savings}}[0.48\linewidth]{%
+    \includegraphics[width=0.50\linewidth]{fig/{savings_pdf}.pdf}
+}
+\subcaptionbox{\label{subfig:savings_loglog}}[0.48\linewidth]{%
+    \includegraphics[width=0.50\linewidth]{fig/{savings_pdf_loglog}.pdf}   
+}
+\caption{Probability distribution for different values of $\lambda$. The markers represent the simulated distribution and the lines is the theoretical distribution scaled with the bin size $\Delta m =0.05$. (a) shows a normal plot while (b) shows a the corresponding logarithmic plot. }
+\label{fig:savings}
+\end{figure}
+
+Values for the Pareto exponent is estimated by selecting the top 20th percentile of the simulated probability distribution functions and fitting these data points to the function in equation \ref{eq:pareto}. This is done with the python function \texttt{scipy.optimize.curve\_fit}, described in \cite{scipy}. The proportionality constant is not estimated. 
+
+The estimated values with corresponding variances is listed in table \ref{tab:savings_nu}. The values of $\nu$ are all above the range $\nu \in [1,3]$. This is not unexpected. Lower values of $\nu$ increase the length of the Pareto tail. The tail of a Pareto distribution is heavier or longer than the tail of a exponential distribution and the exponential distribution has a longer tail than a Gamma distribution. For very high values of $\lambda$ the tail is barely present and the Pareto distribution is a very bad fit. As can be seen in table \ref{tab:savings_nu} for $\lambda=0.9$ where the estimated variance is also very high. 
+
+\begin{table}
+\centering
+\caption{Estimated Pareto exponents with corresponding variances for different values of $\lambda$. }
+\label{tab:savings_nu}
+\begin{tabularx}{\textwidth}{X X X X}
+\hline
+$N$ & $\lambda$ & $\nu$ & $\sigma_{\nu}^2$\\
+\hline\hline
+500 & 0.00 & 4.90 & 0.0093 \\
+500 & 0.25 & 6.10 & 0.0089 \\
+500 & 0.50 & 6.98 & 0.0023 \\
+500 & 0.90 & 28.01 & 4.7192 \\
+\hline
+\end{tabularx}
+\end{table}
+
+
+\FloatBarrier
+\subsection{Nearest neighbors}
+\label{subsec:neighbors_results}
+Introducing the interaction model in section \ref{subsec:neighbors} changes the distribution of wealth. Figure \ref{fig:neighbors} shows how the probability distribution changes from $\alpha=0$ (no interaction model) to $\alpha=2$. Increasing the number of agents does not seem to have much of an impact on the results. Increasing the number of agents also increases the total amount of money in the system. The richest agents may get more money, but the general shape of the distributions are the same for both $N=500$ and $N=1000$. 
+
+Introducing savings, however, does have a clear impact on the probability distributions. As seen in section \ref{subsec:savings_results} the rich get poorer and fewer agents become poor. In addition, savings also decreases the impact of the interaction model. The changes to the probability distributions as $\alpha$ change is smaller when savings are applied. When savings are not applied, it becomes clearer that the interaction model amplifies the uneven distribution of wealth. For increasing $\alpha$ the probability of having very little money increases and the amount of money the richest agents can have increases. The probability of being in the middle and upper region of wealth decreases, but the probability of being extremely rich increases. 
+
+Table \ref{tab:neighbors} shows the estimated Pareto exponents, their corresponding variances and how many of the suggested transactions that were accepted when applying this interaction model. Since savings cause the agents to be more financially close, more transactions are accepted when savings are applied and the effect of the interaction model is dampened as the probability distributions in figure \ref{fig:neighbors} suggested. 
+
+As $\alpha$ increases less transactions are accepted. When $\alpha$ becomes very high only agents that are financially close, or $|m_a - m_b| < 1$ following the interpretation of this project, are likely to interact. This will result in many poor agents trading with each other. Since the total money available in a transaction is the sum of the two agents' money, a trade between only poor agents will cause the agents to remain poor. The rich agents will only trade with other rich agents, with the possible outcome of one becoming even richer and the other becoming poorer. If one agent becomes too rich this agent will most likely stop trading because no other agent is financially close and that agent's money will in effect be removed from the system. The final distribution will end up with most agents with $m < 1$ and a few very rich agents. The distribution will have a very long Pareto-like tail. For $\alpha > 1.50$ the Pareto exponent is in the range $\nu \in [1,3]$ without savings. 
+
+This model is sensitive to the starting money $m_0$ or the total amount of money in the system. When $m_0=1$ the difference in money between agents is likely to be less than one, but if the starting money is increased this probability will be lower. This will again have an impact on how many transactions are accepted and the impact of the model parameter $\alpha$.
+
+\begin{table}
+\caption{Estimated Pareto exponents $\nu$ with corresponding variances for different values of $N$, $\lambda$ and $\alpha$. The last column shows the percentage of accepted transactions of the total $10^7$ transaction attempts. The value is a mean over all Monte Carlo cycles.}
+\label{tab:neighbors}
+\begin{tabularx}{\textwidth}{X X X X X r}
+\hline
+$N$ & $\lambda$ & $\alpha$ & $\nu$ & $\sigma_{\nu}^2$ & Accepted\\
+\hline\hline
+500 & 0.00 & 0.50 & 4.79 & 0.0691 & 90\%\\
+500 & 0.00 & 1.00 & 3.85 & 0.0448 & 83\%\\
+500 & 0.00 & 1.50 & 3.04 & 0.0305 & 80\%\\
+500 & 0.00 & 2.00 & 2.19 & 0.0384 & 85\%\\
+500 & 0.50 & 0.50 & 6.93 & 0.0053 & 98\%\\
+500 & 0.50 & 1.00 & 6.31 & 0.0028 & 95\%\\
+500 & 0.50 & 1.50 & 6.48 & 0.0374 & 92\%\\
+500 & 0.50 & 2.00 & 5.15 & 0.0077 & 89\%\\
+1000 & 0.00 & 0.50 & 4.76 & 0.0333 & 90\%\\
+1000 & 0.00 & 1.00 & 4.20 & 0.1047 & 83\%\\
+1000 & 0.00 & 1.50 & 3.09 & 0.0572 & 80\%\\
+1000 & 0.00 & 2.00 & 2.21 & 0.0357 & 85\%\\
+1000 & 0.50 & 0.50 & 7.46 & 0.0030 & 98\%\\
+1000 & 0.50 & 1.00 & 7.61 & 0.0349 & 95\%\\
+1000 & 0.50 & 1.50 & 6.20 & 0.0073 & 92\%\\
+1000 & 0.50 & 2.00 & 5.50 & 0.0080 & 89\%\\
+\hline
+\end{tabularx}
+\end{table}
+
+\begin{figure}
+\centering
+\subcaptionbox{N=500, $\lambda=0$\label{subfig:500_no_save}}[0.48\linewidth]{%
+    \includegraphics[width=0.52\linewidth]{fig/{neighbor_pdf_savings_0.00_agents_500}.pdf}
+
+}
+\subcaptionbox{N=500, $\lambda=0.5$\label{subfig:500_save}}[0.48\linewidth]{%
+    \includegraphics[width=0.52\linewidth]{fig/{neighbor_pdf_savings_0.50_agents_500}.pdf}
+    
+}
+\subcaptionbox{N=1000, $\lambda=0$\label{subfig:1000_no_save}}[0.48\linewidth]{%
+    \includegraphics[width=0.52\linewidth]{fig/{neighbor_pdf_savings_0.00_agents_1000}.pdf}
+
+}
+\subcaptionbox{N=1000, $\lambda=0.5$\label{subfig:1000_save}}[0.48\linewidth]{%
+    \includegraphics[width=0.52\linewidth]{fig/{neighbor_pdf_savings_0.50_agents_1000}.pdf}
+
+}
+\caption{Wealth probability distributions with different values of $N$, $\lambda$ and $\alpha$. (a) shows how the model parameter $\alpha$ changes the distribution with 500 agents and without savings. (b) shows the same but with savings. (c) and (d) shows the same as (a) and (b), respectively, but with 1000 agents instead.}
+\label{fig:neighbors}
+\end{figure}
+
+\FloatBarrier
+\subsection{Nearest neighbor and former transactions}
+The interaction model in section \ref{subsec:history} also includes the aspect of transaction history. The parameter $\gamma$ determines the significance of the transaction history. Figure \ref{fig:history} shows how the probability distribution changes from $\gamma=0$ (no history) to $\gamma=4$. Without savings and with $\alpha=1$, introducing the transaction history has an effect on the probability distribution, but changing the value of $\gamma$ does not have a large impact. The transaction history lowers the probability of being poor and decreases the the maximum amount of money the richest agents are likely to obtain. 
+
+When $\alpha=2$ the value of the parameter $\gamma$ becomes more significant. When savings are introduced the probability distribution has only minor changes for different values of $\alpha$ and $\gamma$. Table \ref{tab:history} shows the estimated Pareto exponents, their corresponding variances and how many of the suggested transactions that were accepted when applying this interaction model. The lack of variation in the probability distribution when changing $\gamma$ can be explained by looking at the number of accepted transactions. When 100\% of the transactions are accepted the model has no effect and all agents are equally likely to perform a trade. When savings are applied the acceptance is almost always 100\%. Without savings some transactions are rejected and the model has some effect. The parameter $\gamma$ increases the probability of a transaction being accepted and the parameter $\alpha$ reduces the probability of a transaction being accepted. To get a reasonable realistic behavior from this model the parameter $\alpha$ needs to be high enough to make different values of $\gamma$ significant. The most transactions are rejected with the combination of $\alpha=2$ and $\gamma=1$ and the Pareto exponent is in the range $\nu \in [1,3]$ for $\alpha=2$ and $\gamma \in \{1,2\}$. 
+
+This model is also sensitive to the number of agents in the simulation. When the total number of agents are large the probability of randomly drawing the same agent pair multiple times decreases. This will affect the value of the variable $c_{ab}$, which is the number of times two specific agents have performed a transaction. This will again have an impact on the significance of the parameter $\gamma$.
+ 
+\begin{table}
+\caption{Estimated Pareto exponents $\nu$ with corresponding variances for different values of $\lambda$, $\alpha$ and $\gamma$. The 5th column shows the maximum number of transactions a pair of agents performed during the $10^7$ transaction attempts over all the Monte Carlo cycles. The last column shows the percentage of accepted transactions of the total $10^7$ transaction attempts. The value is a mean over all Monte Carlo cycles.}
+\label{tab:history}
+\begin{tabularx}{\textwidth}{X X X X X X X r}
+\hline
+$N$ & $\lambda$ & $\alpha$ & $\gamma$ & $\max(c_{ab})$ & $\nu$ & $\sigma_{\nu}^2$ & Accepted \\
+\hline\hline
+1000 & 0.00 & 1.00 & 1.00 & 55 & 5.03 & 0.0072 & 99\%\\
+1000 & 0.00 & 1.00 & 2.00 & 50 & 5.40 & 0.0430 & 99\%\\
+1000 & 0.00 & 1.00 & 3.00 & 50 & 5.34 & 0.0421 & 99\%\\
+1000 & 0.00 & 1.00 & 4.00 & 50 & 5.47 & 0.0545 & 99\%\\
+1000 & 0.00 & 2.00 & 1.00 & 48 & 2.68 & 0.0438 & 95\%\\
+1000 & 0.00 & 2.00 & 2.00 & 51 & 2.95 & 0.0514 & 98\%\\
+1000 & 0.00 & 2.00 & 3.00 & 50 & 5.38 & 0.2180 & 98\%\\
+1000 & 0.00 & 2.00 & 4.00 & 49 & 5.22 & 0.0176 & 98\%\\
+1000 & 0.50 & 1.00 & 1.00 & 51 & 8.02 & 0.0135 & 100\%\\
+1000 & 0.50 & 1.00 & 2.00 & 50 & 7.51 & 0.0031 & 100\%\\
+1000 & 0.50 & 1.00 & 3.00 & 53 & 7.69 & 0.0092 & 100\%\\
+1000 & 0.50 & 1.00 & 4.00 & 52 & 7.42 & 0.0029 & 100\%\\
+1000 & 0.50 & 2.00 & 1.00 & 51 & 8.63 & 0.0669 & 99\%\\
+1000 & 0.50 & 2.00 & 2.00 & 50 & 7.68 & 0.0081 & 100\%\\
+1000 & 0.50 & 2.00 & 3.00 & 53 & 7.60 & 0.0036 & 100\%\\
+1000 & 0.50 & 2.00 & 4.00 & 53 & 8.09 & 0.0147 & 100\%\\
+\hline
+\end{tabularx}
+\end{table}
+
+\begin{figure}
+\centering
+\subcaptionbox{$\alpha=1$, $\lambda=0$\label{subfig:a1_no_save}}[0.48\linewidth]{%
+    \includegraphics[width=0.52\linewidth]{fig/{history_pdf_savings_0.00_alpha_1.00_agents_1000}.pdf}
+
+}
+\subcaptionbox{$\alpha=1$, $\lambda=0.5$\label{subfig:a1_save}}[0.48\linewidth]{%
+    \includegraphics[width=0.52\linewidth]{fig/{history_pdf_savings_0.50_alpha_1.00_agents_1000}.pdf}
+    
+}
+\subcaptionbox{$\alpha=2$, $\lambda=0$\label{subfig:a2_no_save}}[0.48\linewidth]{%
+    \includegraphics[width=0.52\linewidth]{fig/{history_pdf_savings_0.00_alpha_2.00_agents_1000}.pdf}
+
+}
+\subcaptionbox{$\alpha=2$, $\lambda=0.5$\label{subfig:a2_save}}[0.48\linewidth]{%
+    \includegraphics[width=0.52\linewidth]{fig/{history_pdf_savings_0.50_alpha_2.00_agents_1000}.pdf}
+
+}
+\caption{Wealth probability distributions with different values of $\lambda$, $\alpha$ and $\gamma$. (a) shows how the model parameter $\gamma$ changes the distribution with $\alpha=1$ and without savings. (b) shows the same but with savings. (c) and (d) shows the same as (a) and (b), respectively, but with $\alpha=2$ instead.}
+\label{fig:history}
+\end{figure}
+
+
 
 \FloatBarrier
 \section{Conclusions}
 \label{sec:conclusions}
+With a basic transaction model and no interaction model the results indicate that the distribution of wealth becomes uneven, with a large amount of the population being poor and a few becoming rich. More specifically the simulation converges towards an exponential distribution. This can be counteracted by applying savings in the transaction model, which cause the simulation to converge towards a Gamma distribution. By applying the nearest neighbors interaction model the distribution of wealth becomes even more uneven and the distribution gets a Pareto tail. Applying the transaction history model dampens the effect of the nearest neighbors model on the distribution. For both interaction models, applying savings decreases the length of the tail of the distribution and the amount of poor agents. 
+
+These results are similar to the results in \cite{interaction}, but there are some discrepancies. This is probably due to the normalization of the transaction probabilities that are not described in \cite{interaction}. Both models need to be investigated further since they rely on circumstances that are not considered model parameters. Specifically, the starting money of each agent and the total number of agents. \cite{interaction} has not applied savings and the deficiencies of the interaction models become apparent when savings are applied. The interaction models struggles to reject enough transaction attempts to make a significant change to the wealth distribution with the simple interpretation used in this project. 
+
+
 
 \clearpage
-
 \begin{thebibliography}{1}
 \bibitem{lectures} Hjort-Jensen, M., 2015. Computational physics. Available at https://github.com/CompPhysics/ComputationalPhysics/
+\bibitem{pareto} V. Pareto, Cours d'economie politique, Lausanne, 1987, http://www.institutcoppet.org/2012/05/08/cours-deconomie-politique-1896-de-vilfredo-pareto
 \bibitem{gibbs} Marco Patriarca, Anirban Chakraborti, Kimmo Kaski, Gibbs versus non-Gibbs distributions in money dynamics, Physica A: Statistical Mechanics and its Applications, Volume 340, Issues 1–3, 1 September 2004, Pages 334-339, ISSN 0378-4371, http://dx.doi.org/10.1016/j.physa.2004.04.024.
 \bibitem{interaction} Sanchari Goswami, Parongama Sen, Agent based models for wealth distribution with preference in interaction, Physica A: Statistical Mechanics and its Applications, Volume 415, 1 December 2014, Pages 514-524, ISSN 0378-4371, http://dx.doi.org/10.1016/j.physa.2014.08.018.
-%\bibitem{physics} Young, Freedman, Sears and Zemansky's University Physics with Modern Physics, 11th edition, Addison-Wesley, 2004  
-%\bibitem{onsager} Onsager, Lars, Phys. Rev., \textbf{65}, 117--149, (1944)
+\bibitem{scipy} SciPy, https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.optimize.curve\_fit.html
 \end{thebibliography}
 
 

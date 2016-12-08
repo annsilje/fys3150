@@ -15,19 +15,21 @@ class Simulation{
 private:
     int m_agents;
     int m_transactions;
+    int m_interactions;
+    int m_max_interactions;
     double m_savings;
     double m_alpha;
     double m_gamma;
     double* m_money;
-    int** m_interactions;
+    int** m_c;
     
 public:
     Simulation(double savings, double start_money, int agents, double alpha, double gamma);
     virtual ~Simulation();
     
-    int get_agents(){return m_agents;}
     double* get_money(){return m_money;}
-    
+    int get_interactions(){return m_interactions;}
+    int get_max_interactions(){return m_max_interactions;}
     void run(std::mt19937_64& generator);
     
 };
@@ -54,7 +56,7 @@ public:
     virtual ~Experiment();
     
     void run(std::mt19937_64& generator);
-    void write();
+    void write_pdf();
     void accumulate_bins(Simulation& simulation, int cycle);
-    void write_expectation_values(int cycle);
+    void write_cycle_data(Simulation& simulation, int cycle);
 };
